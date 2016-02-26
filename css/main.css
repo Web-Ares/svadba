@@ -92,9 +92,6 @@
     margin: 0 auto;
     padding: 0 10px;
 }
-.site__title_frame{
-    font-size: 30px;
-}
 .site__footer {
     z-index: 2;
     position: absolute;
@@ -131,6 +128,9 @@
     position: relative;
     z-index: 1;
     padding: 0 84px;
+}
+.site__title_frame{
+    font-size: 30px;
 }
 .site__title span:before,
 .site__title span:after{
@@ -208,11 +208,158 @@
 }
 /* --------------- /trip --------------- */
 
+/* --------------- menu-block --------------- */
+.menu-block{
+    position: relative;
+    padding: 52px 0 65px;
+    background-color: #fff;
+    text-align: center;
+    z-index: 2;
+}
+.menu-block:before{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    height: 61px;
+    width: 100%;
+    background: url("../img/bg-organization.png") no-repeat top center;
+    content: '';
+}
+.menu-block__wrap{
+    padding-top: 61px;
+    text-align: justify;
+}
+.menu-block__wrap:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+.menu-block__item{
+    display: inline-block;
+    vertical-align: top;
+    width: 220px;
+    background-color: #ebe3e5;
+    font: normal 16px 'bebasneue_regular', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    transition: box-shadow .3s ease;
+    -webkit-transition: box-shadow .3s ease;
+}
+.menu-block__item:hover{
+    box-shadow: 1px 1px 8px rgba(0,0,0,.3);
+}
+.menu-block__title{
+    padding: 9px 0 7px;
+    background-color: #cd6a99;
+    color: #fff;
+}
+.menu-block__img{
+    height: 147px;
+    border-bottom: 1px solid #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.menu-block__content{
+    position: relative;
+    margin: 12px 0 12px 48px;
+    padding-left: 20px;
+    border-left: 1px solid #d5c8cb;
+    color: #000;
+    text-align: left;
+}
+.menu-block__content span{
+    color: #cd6a99;
+}
+.menu-block__letter{
+    position: absolute;
+    top: -10px;
+    left: -32px;
+    color: #cd6a99;
+    font: normal 52px 'bebasneue_bold', sans-serif;
+    -webkit-transform-origin: 0%;
+    transform-origin: 0%;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    background-repeat: repeat-y;
+}
+.menu-block__letter_1{
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+}
+.menu-block__letter_2{
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.menu-block__letter_3{
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+.menu-block__letter_4{
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+@-webkit-keyframes pulse{
+    from {
+        color: #f00;
+        text-shadow: 0 0 10px #f00;
+    }
+    to 	{
+        color: #cd6a99;
+        text-shadow: none;
+    }
+}
+@keyframes pulse{
+    from {
+        color: #f00;;
+        text-shadow: 0 0 10px #f00;
+    }
+    to 	{
+        color: #cd6a99;
+        text-shadow: none;
+    }
+}
+/* --------------- /menu-block --------------- */
+
+/* --------------- video-block --------------- */
+.video-block{
+    position: relative;
+    padding-top: 87px;
+    text-align: center;
+}
+.video-block:before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 61px;
+    background: url("../img/bg-video.png") no-repeat 0 0;
+    content: '';
+}
+.video-block__wrap{
+    margin-bottom: 33px;
+    padding-top: 21px;
+}
+.video-block__content{
+    margin-bottom: 24px;
+    font: 15px/18px 'Lobster', sans-serif;
+    color: #222;
+}
+/* --------------- /video-block --------------- */
+
 /* --------------- advantages --------------- */
 .advantages{
     height: 430px;
-    margin-bottom: 30px;
-    padding-top: 139px;
+    margin-bottom: 31px;
+    padding-top: 141px;
     background: url("../img/bg-advantages.png") no-repeat top center;
     text-align: center;
 }
@@ -253,7 +400,7 @@
     text-align: center;
 }
 .benefit__introduction{
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     letter-spacing: -.6px;
 }
 .benefit__wrap{
@@ -267,7 +414,7 @@
 .benefit__item{
     display: inline-block;
     width: 226px;
-    height: 240px;
+    height: 232px;
     padding-top: 181px;
     font-size: 20px;
     background-position: top center;
