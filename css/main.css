@@ -1,0 +1,141 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Lobster&subset=cyrillic);
+/* --------------- Style to null --------------- */
+*{-moz-box-sizing:border-box;box-sizing:border-box;}html,body,div,span,h1,h2,h3,h4,h5,h6,p,em,img,strong,sub,sup,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,table,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,a,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{border:0;outline:0;vertical-align:baseline;background:transparent;font-size:100%;margin:0;padding:0;}a{background:transparent;}table{border-collapse:collapse;border-spacing:0;}td,td img{vertical-align:top;}input,select,button,textarea{font-size:12px;font-family:Arial, Helvetica, sans-serif;margin:0;}input[type="text"],input[type="password"],textarea,input[type="email"],input[type="phone"],input[type="number"]{font:12px Arial, Helvetica, sans-serif;padding:0;}input[type="checkbox"]{vertical-align:bottom;}input[type="radio"]{vertical-align:text-bottom;}sub{vertical-align:sub;font-size:smaller;}sup{vertical-align:super;font-size:smaller;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}ul,ol{list-style:none;}html{overflow-y:scroll;overflow-x:auto;}html,body{height:100%;}body{line-height:1;color:#000;text-align:left;z-index:1;position:relative;}input [type='text']{padding:0;}textarea{resize:none;overflow:auto;}label,input[type="button"],input[type="submit"],button{cursor:pointer;}input[type="button"],input[type="reset"],input[type="submit"],button,input[type="text"],input[type="password"],textarea,input[type="email"],input[type="tel"],input[type="phone"],input[type="number"]{-webkit-appearance:none;}a,a:visited,a:hover,a:focus,a:active{text-decoration:none;}input[type="submit"]::-moz-focus-inner,button::-moz-focus-inner{border:0;padding:0;}input:invalid{outline:none;-moz-box-shadow:none;border:none;}::-ms-clear{display:none;}input,textarea,input[type="search"]:focus,:focus{outline:none;}
+/* --------------- Style to null --------------- */
+
+/*
+    main styles
+    version: 26.02.2016
+
+    placeholder
+
+    fonts
+
+    site
+
+    logo
+
+*/
+
+/* --------------- placeholder --------------- */
+::-webkit-input-placeholder {
+    color: #000;
+}
+:-moz-placeholder {
+    color: #000;
+}
+.placeholder {
+    color: #000;
+}
+/* --------------- /placeholder --------------- */
+
+/* --------------- fonts --------------- */
+@font-face {
+    font-family: "bebasneue_regular";
+    src: url("../fonts/bebasneue_regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+/* --------------- /fonts --------------- */
+
+/* --------------- site --------------- */
+.site {
+    min-height: 100%;
+    min-width: 1000px;
+    overflow: hidden;
+    position: relative;
+    font-family: 'PT Sans', sans-serif;
+    background: url("../img/bg-site.jpg");
+    z-index: 1;
+}
+.site:after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 100px;
+}
+.site__content {
+    position: relative;
+    z-index: 2;
+}
+.site__header {
+    position: relative;
+    height: 60px;
+    background-color: #cd6a99;
+    z-index: 3;
+}
+.site__header:after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 793px;
+    height: 80px;
+    background: url("../img/bg-head.png") no-repeat center;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
+.site__centered{
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.site__footer {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+    background-color: #cd6a99;
+}
+/* --------------- /site --------------- */
+
+/* --------------- logo --------------- */
+.logo {
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    z-index: 2;
+}
+/* --------------- /logo --------------- */
+
+/* --------------- phone --------------- */
+.phone {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font: 25px 'Lobster', cursive;
+    color: #fff;
+    cursor: default;
+}
+/* --------------- /phone --------------- */
+
+/* --------------- trip --------------- */
+.trip{
+    position: absolute;
+    top: 11px;
+    left: 13px;
+    width: 214px;
+    height: 65px;
+    padding-top: 14px;
+    font: 17px 'bebasneue_regular', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    background: url("../img/plane.png") no-repeat;
+    background-position: 30px 0;
+    text-align: justify;
+    z-index: 2;
+}
+.trip:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+/* --------------- /trip --------------- */
