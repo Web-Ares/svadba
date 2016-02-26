@@ -1,13 +1,14 @@
-( function(){
-    $( function(){
+( function() {
 
-    $('.swiper-container').each(function () {
-        Slider($(this));
-    });
+    $( function() {
 
-        var swiper = new Swiper('.swiper-container');
+        $('.swiper-container').each(function () {
+            Slider($(this));
+        });
 
-} );
+        var swiper = new Swiper( '.our-team__slider .swiper-container' );
+
+    } );
 
 var Slider = function (obj) {
 
@@ -39,4 +40,5 @@ var Slider = function (obj) {
 
     _init();
 };
+
 } )();
