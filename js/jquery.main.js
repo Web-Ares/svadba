@@ -1,8 +1,11 @@
-$(function(){
+( function(){
+    $( function(){
 
     $('.swiper-container').each(function () {
         Slider($(this));
     });
+
+        var swiper = new Swiper('.swiper-container');
 
 } );
 
@@ -36,3 +39,4 @@ var Slider = function (obj) {
 
     _init();
 };
+} )();

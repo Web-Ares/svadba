@@ -17,6 +17,8 @@
 
     logo
 
+    our-team
+
 */
 
 /* --------------- placeholder --------------- */
@@ -113,6 +115,50 @@
     height: 70px;
     background-color: #cd6a99;
     z-index: -1;
+}
+.site__title{
+    margin: 0 0 1px;
+    font-size: 50px;
+    line-height: 53px;
+    font-family: 'Lobster', sans-serif;
+    text-align: center;
+    color: #222222;
+    font-weight: normal;
+}
+.site__title span{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    z-index: 1;
+    padding: 0 84px;
+}
+.site__title span:before,
+.site__title span:after{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 66px;
+    height: 18px;
+    background: url("../img/title-decor.png") no-repeat;
+    background-size: cover;
+    content: '';
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.site__title span:after{
+    right: 0;
+    left: auto;
+    transform: translateY(-50%) scaleX(-1);
+    -webkit-transform: translateY(-50%) scaleX(-1);
+}
+.site__subtitle{
+    margin: 0 0 53px;
+    font-size: 30px;
+    line-height: 33px;
+    font-family: 'Lobster', sans-serif;
+    text-align: center;
+    color: #222222;
+    font-weight: normal;
 }
 /* --------------- /site --------------- */
 
@@ -266,3 +312,79 @@
     display: none;
 }
 /* --------------- /footer --------------- */
+
+/* --------------- our-team --------------- */
+.our-team {
+    padding: 128px 0 10px;
+    background: #fff;
+}
+.our-team__title{
+    display: block;
+    margin: 0 0 35px;
+    color: #cd6a99;
+    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: 'Lobster', sans-serif;
+    white-space: pre-line;
+}
+.our-team__slider{
+    padding: 0 4px;
+    position: relative;
+    text-align: right;
+}
+.our-team__slider:after{
+    position: absolute;
+    left: 51px;
+    top: 3px;
+    width: 383px;
+    height: 437px;
+    background: url("../img/camera.png") no-repeat;
+    content: '';
+}
+.our-team__slider .swiper-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 456px;
+    height: 397px;
+    text-align: left;
+}
+.our-team__slider .swiper-slide {
+    height: 397px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+}
+.our-team__pic{
+    width: 456px;
+    height: 307px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.our-team__text{
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    padding: 15px 0;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: 'Lobster', sans-serif;
+    text-align: center;
+    color: #222222;
+    font-weight: normal;
+}
+.our-team__text>div{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.our-team__text>div>div{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    padding: 0 95px;
+}
+/* --------------- /our-team --------------- */
