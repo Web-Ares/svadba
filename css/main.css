@@ -93,6 +93,17 @@
     height: 100px;
     background-color: #cd6a99;
 }
+.site__footer:before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 794px;
+    height: 110px;
+    background: url("../img/bg-footer.png") no-repeat center;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
 /* --------------- /site --------------- */
 
 /* --------------- logo --------------- */
@@ -130,6 +141,7 @@
     text-transform: uppercase;
     background: url("../img/plane.png") no-repeat;
     background-position: 30px 0;
+    background-size: 135px 65px;
     text-align: justify;
     z-index: 2;
 }
