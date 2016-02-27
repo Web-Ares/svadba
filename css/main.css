@@ -315,8 +315,21 @@
 
 /* --------------- our-team --------------- */
 .our-team {
+    position: relative;
+    z-index: 1;
     padding: 128px 0 10px;
+    margin-bottom: 75px;
     background: #fff;
+}
+.our-team:after{
+    position: absolute;
+    bottom: -93px;
+    left: 0;
+    width: 100%;
+    height: 93px;
+    background: url("../img/white-bg.png") no-repeat;
+    background-size: cover;
+    content: '';
 }
 .our-team__title{
     display: block;
@@ -350,13 +363,11 @@
     text-align: left;
 }
 .our-team__slider .swiper-slide {
+    width: 456px;
     height: 397px;
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
 }
 .our-team__pic{
-    width: 456px;
+    width: 100%;
     height: 307px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -388,3 +399,51 @@
     padding: 0 95px;
 }
 /* --------------- /our-team --------------- */
+
+/* --------------- portfolio --------------- */
+.portfolio{
+    padding: 16px 0 19px;
+}
+.portfolio .site__subtitle{
+    margin: 0 0 27px;
+}
+.portfolio__title{
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 0 24px;
+}
+.portfolio__title span{
+    display: block;
+    margin: 4px 0 0;
+}
+.portfolio__slider{
+    text-align: right;
+    padding: 0 0 26px;
+    margin: 0 0 1px;
+    display: block;
+    cursor: pointer;
+}
+.portfolio__slider .swiper-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 700px;
+    height: 153px;
+    text-align: left;
+}
+.portfolio__slider .swiper-slide {
+    height: 153px;
+    width: 220px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.portfolio__slider_video{
+    background: url("../img/video-bg.png") no-repeat left bottom;
+}
+
+.portfolio__slider_photos{
+    background: url("../img/photo-bg.png") no-repeat 28px bottom;
+}
+/* --------------- /portfolio --------------- */

@@ -8,6 +8,18 @@
 
         var swiper = new Swiper( '.our-team__slider .swiper-container' );
 
+        var swiper2 = new Swiper('.portfolio__slider_video .swiper-container', {
+            slidesPerView: 3,
+            paginationClickable: true,
+            spaceBetween: 30
+        });
+        var swiper3 = new Swiper('.portfolio__slider_photos .swiper-container', {
+            slidesPerView: 3,
+            paginationClickable: true,
+            spaceBetween: 30
+        });
+
+
     } );
 
 var Slider = function (obj) {
