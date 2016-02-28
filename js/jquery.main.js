@@ -2,6 +2,32 @@
 
     $( function() {
 
+        $('.btn_1').on({
+            'click':function(){
+                $('.call-manager__feedback').addClass('open');
+                return false
+            }
+        });
+        $('.call-manager__close').on({
+            'click':function(){
+                $('.call-manager__feedback').removeClass('open');
+                return false
+            }
+        });
+
+        $("#form").submit(function() {
+            var form_data = $(this).serialize();
+            $.ajax({
+                type: "POST",
+                url: "form.php",
+                data: form_data,
+                success: function() {
+                    $('.call-manager__form').addClass('success');
+                    $('.call-manager__successfully').addClass('success').fadeOut(10000);
+                }
+            });
+        });
+
         $('.swiper-container').each(function () {
             Slider($(this));
         });

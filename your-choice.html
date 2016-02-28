@@ -252,11 +252,50 @@
             </div>
             <!-- /your-choice__wrap -->
 
-            <div class="your-choice__call-manager">
+            <!-- call-manager -->
+            <div class="call-manager">
 
+                <div class="call-manager__successfully">
+                    <h2>Ваша заявка отправлена</h2>
+                    <h2>Ожидайте звонка</h2>
+                </div>
+
+                <div class="call-manager__feedback">
+
+                    <a class="call-manager__close">X</a>
+
+                    <form  id="form" class="call-manager__form" method="post" action="php/form.php" novalidate>
+
+                        <h2>Наш телефон : <a class="call-manager__phone" href="tel:+75555555555">+7 555 55 55 555</a></h2>
+                        <h2>или мы можем Вам перезвонить:</h2>
+
+                        <fieldset>
+                            <label for="name">Имя</label>
+                            <input type="text" name="name" id="name" required/>
+                        </fieldset>
+                        <fieldset>
+                            <label for="phone">Телефон</label>
+                            <input type="tel" name="phone" id="phone" required/>
+                        </fieldset>
+                        <fieldset>
+                            <label for="time">Удобное время</label>
+                            <input type="text" name="time" id="time" required/>
+                        </fieldset>
+
+                        <!-- btn -->
+                        <button class="btn" type="submit">Заказать звонок</button>
+                        <!-- /btn -->
+
+                    </form>
+
+                </div>
+
+                <!-- btn -->
                 <a class="btn btn_1" href="#">Звонок менеджеру</a>
+                <!-- /btn -->
 
             </div>
+            <!-- .call-manager -->
 
             <div class="your-choice__update">
                 Уточните стоимость выбранного вами пакета услуг
