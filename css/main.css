@@ -691,6 +691,7 @@
     text-transform: uppercase;
     text-align: left;
 }
+
 .your-choice ul li {
     position: relative;
     height: 40px;
@@ -849,6 +850,13 @@
     border-radius: 50px;
     color: #9a7f86;
     cursor: pointer;
+}
+.call-manager__feedback .error input {
+    border: 1px solid #cd6a99;
+    color: #cd6a99;
+}
+.call-manager__feedback input:focus {
+    border-color: #9a7f86;
 }
 .call-manager__feedback .error input {
     border: 1px solid #cd6a99;
