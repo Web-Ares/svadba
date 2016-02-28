@@ -17,6 +17,11 @@
             SliderPortfolio( $( this ) );
 
         });
+        $( '.your-choice__slider' ).each(function () {
+
+            SliderChoice( $( this ) );
+
+        });
 
     } );
 
@@ -83,6 +88,40 @@ var Slider = function (obj) {
 
         _init();
     };
+
+    var SliderChoice = function (obj) {
+
+        //private properties
+        var _self = this,
+            _obj = obj,
+            _sliderWrapper = _obj.find( '.swiper-container' ),
+            _nextBtn = _obj.find( '.swiper-button-next' ),
+            _prevBtn = _obj.find( '.swiper-button-prev' ),
+            _slider;
+
+
+        //private methods
+        var _initSlider = function () {
+
+                _slider = new Swiper( _sliderWrapper, {
+                    slidesPerView: 1,
+                    nextButton: _nextBtn,
+                    prevButton: _prevBtn,
+                    spaceBetween: 30
+                });
+
+            },
+            _init = function () {
+                _initSlider();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
 
     var SliderTeam = function (obj) {
 
