@@ -685,7 +685,8 @@
     margin-left: 23px;
 }
 .your-choice__title{
-    margin: -7px 0 24px;
+    height: 47px;
+    margin: -7px 0 10px;
     font: 30px 'bebasneue_bold', sans-serif;
     text-transform: uppercase;
     text-align: left;
@@ -800,10 +801,6 @@
     font: 25px 'Lobster', cursive;
     color: #222;
 }
-.call-manager__form{
-    transition: opacity .3s ease, visibility .3s ease;
-    -webkit-transition: opacity .3s ease, visibility .3s ease;
-}
 .call-manager__form label{
     display: block;
     margin-bottom: 3px;
@@ -840,10 +837,6 @@
     opacity: 1;
     visibility: visible;
 }
-.call-manager__form.success{
-    opacity: 0;
-    visibility: hidden;
-}
 .call-manager__close{
     display: block;
     position: absolute;
@@ -856,5 +849,12 @@
     border-radius: 50px;
     color: #9a7f86;
     cursor: pointer;
+}
+.call-manager__feedback .error input {
+    border: 1px solid #cd6a99;
+    color: #cd6a99;
+}
+.call-manager__feedback input:focus {
+    border-color: #9a7f86;
 }
 /* --------------- /your-choice --------------- */
