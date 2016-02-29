@@ -68,6 +68,22 @@
 
         });
 
+        _start = $(".way__content").offset().top;
+        navigation();
+
+        $(window).scroll(function() {
+            navigation();
+        })
+
+        function navigation(){
+         _scrolling = $(window).scrollTop();
+         if (_scrolling > _start) {
+
+             $('.way__decision-item').addClass('visible');
+
+         }
+        }
+
     } );
 
 var Slider = function (obj) {
