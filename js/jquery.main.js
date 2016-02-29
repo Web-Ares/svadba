@@ -50,21 +50,23 @@
 
         });
 
-        _start = $(".way__content").offset().top;
-        navigation();
-
-        $(window).scroll(function() {
+        $('.way__content').each(function () {
+            _start = $(".way__content").offset().top;
             navigation();
+
+            $(window).scroll(function () {
+                navigation();
+            })
+
+            function navigation() {
+                _scrolling = $(window).scrollTop();
+                if (_scrolling > _start) {
+
+                    $('.way__decision-item').addClass('visible');
+
+                }
+            }
         })
-
-        function navigation(){
-         _scrolling = $(window).scrollTop();
-         if (_scrolling > _start) {
-
-             $('.way__decision-item').addClass('visible');
-
-         }
-        }
 
     });
 
@@ -88,7 +90,8 @@
             var _swiper = new Swiper(_obj, {
                 slidesPerView: 1,
                 loop: true,
-                effect: 'fade'
+                effect: 'fade',
+                speed: 2000
             });
         }
 
