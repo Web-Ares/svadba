@@ -726,6 +726,7 @@
     padding-bottom: 10px;
     margin: 79px 0 38px;
     background: url("../img/your-choice-bg.png") repeat-y;
+    overflow: visible;
 }
 .your-choice__list{
     display: inline-block;
@@ -828,7 +829,7 @@
     position: relative;
     width: 200px;
     margin: 0 auto 11px;
-    text-align: left;
+    text-align: center;
 }
 .call-manager__feedback{
     position: absolute;
@@ -840,6 +841,7 @@
     padding: 20px;
     background: #ead3d9;
     border-radius: 20px;
+    text-align: left;
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s ease, visibility .3s ease;
@@ -923,6 +925,7 @@
     border-color: #9a7f86;
 }
 /* --------------- /your-choice --------------- */
+
 /* --------------- steps --------------- */
 .steps{
 
