@@ -6,7 +6,7 @@ $time = $_GET['time'];
 
 if ($_GET['send'] == true) {
 
-    $to = 'kuzmenkos1986@gmail.com';
+    $to = 'kuzmenko@gmail.com';
     $subject = 'Обратный звонок';
     $message = '
                 <html>
