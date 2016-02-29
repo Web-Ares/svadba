@@ -155,10 +155,9 @@ elseif($button==13 || $button==14 || $button==15 || $button==16 || $button==17 |
                     <!--/steps__item-->';
 
 }
-
-else{
+elseif($button==19 || $button==20|| $button==21 || $button==22 || $button==23 || $button==24){
     echo ' <!--steps__result-->
-                    <div class="steps__result">
+                    <div class="steps__item steps__result" data-que="5">
 
 
                         <h2 class="steps__result-title">Похоже на свадьбу вашей мечты ?</h2>
@@ -197,6 +196,8 @@ else{
                     </div>
                     <!--/steps__result-->';
 }
+
+
 exit;
 
 
