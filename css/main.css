@@ -739,6 +739,13 @@
     font: 30px 'bebasneue_bold', sans-serif;
     text-transform: uppercase;
     text-align: left;
+    transition: font-size .3s ease;
+    -webkit-transition: font-size .3s ease;
+}
+.your-choice__item:hover .your-choice__title{
+    font-size: 36px;
+    transition: font-size .3s ease;
+    -webkit-transition: font-size .3s ease;
 }
 .your-choice ul li {
     position: relative;
@@ -821,6 +828,7 @@
     position: relative;
     width: 200px;
     margin: 0 auto 11px;
+    text-align: left;
 }
 .call-manager__feedback{
     position: absolute;
@@ -849,6 +857,7 @@
 .call-manager__phone{
     font: 25px 'Lobster', cursive;
     color: #222;
+    cursor: default;
 }
 .call-manager__form label{
     display: block;
