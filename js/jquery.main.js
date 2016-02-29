@@ -66,7 +66,6 @@
          }
         }
 
-    } );
     });
 
     var Slider = function (obj) {
