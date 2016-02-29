@@ -104,7 +104,7 @@
                     self.core.startView();
                 },
                 startView: function () {
-                    if (self.obj.parent('.nice-radio').length==0) {
+                    if (self.obj.parent('.nice-radio').length == 0) {
                         self.name = self.obj.attr('name');
                         self.wrap = $('<div class="nice-radio"></div>');
                         if (self.obj[0].checked == true) {
@@ -179,7 +179,9 @@
                         success: function (data) {
                             _obj.append(data);
                             $('input[type="radio"]').each(function () {
-                                new NiceRadio($(this));
+                                if(!$(this).parent().hasClass('nice-radio')){
+                                    new NiceRadio($(this));
+                                }
                             });
                             return false;
                         },
