@@ -243,7 +243,8 @@
                     slidesPerView: 3,
                     nextButton: _nextBtn,
                     prevButton: _prevBtn,
-                    spaceBetween: 30
+                    spaceBetween: 30,
+                    speed: 5000
                 });
 
             },
