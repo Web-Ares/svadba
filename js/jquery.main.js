@@ -90,8 +90,9 @@
             var _swiper = new Swiper(_obj, {
                 slidesPerView: 1,
                 loop: true,
+                autoplay: 4000,
                 effect: 'fade',
-                speed: 2000
+                speed: 300,
             });
         }
 
