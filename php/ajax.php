@@ -18,37 +18,37 @@ if($button==1 || $button==2 || $button==3 || $button==4 || $button==5 || $button
                        <!--steps__item-elem-->
                        <div class="steps__item-elem" style="background-image: url('.'pic/photo2.png'.')">
                            <label for="btn1">Заголовок 1</label>
-                           <input type="radio" name="button1" class="steps__item-radio" value="7" id="btn1">
+                           <input type="radio" name="button2" class="steps__item-radio" value="7" id="btn1">
                        </div>
                        <!--/steps__item-elem-->
                        <!--steps__item-elem-->
                        <div class="steps__item-elem" style="background-image: url('.'pic/photo2.png'.')">
                            <label for="btn2">Заголовок 2</label>
-                           <input type="radio" name="button1" class="steps__item-radio" value="8" id="btn2">
+                           <input type="radio" name="button2" class="steps__item-radio" value="8" id="btn2">
                        </div>
                        <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo2.png'.')">
                             <label for="btn3">Заголовок 3</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="9" id="btn3">
+                            <input type="radio" name="button2" class="steps__item-radio" value="9" id="btn3">
                         </div>
                         <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo2.png'.')">
                             <label for="btn4">Заголовок 4</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="10" id="btn4">
+                            <input type="radio" name="button2" class="steps__item-radio" value="10" id="btn4">
                         </div>
                         <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo2.png'.')">
                             <label for="btn5">Заголовок 5</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="11" id="btn5">
+                            <input type="radio" name="button2" class="steps__item-radio" value="11" id="btn5">
                         </div>
                         <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo2.png'.')">
                             <label for="btn6">Заголовок 6</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="12" id="btn6">
+                            <input type="radio" name="button2" class="steps__item-radio" value="12" id="btn6">
                         </div>
                         <!--/steps__item-elem-->
 
@@ -67,37 +67,37 @@ elseif($button==9 || $button==10 || $button==7 || $button==8 || $button==11 || $
                        <!--steps__item-elem-->
                        <div class="steps__item-elem" style="background-image: url('.'pic/photo3.png'.')">
                            <label for="btn21">Заголовок 1</label>
-                           <input type="radio" name="button1" class="steps__item-radio" value="13" id="btn21">
+                           <input type="radio" name="button3" class="steps__item-radio" value="13" id="btn21">
                        </div>
                        <!--/steps__item-elem-->
                        <!--steps__item-elem-->
                        <div class="steps__item-elem" style="background-image: url('.'pic/photo3.png'.')">
                            <label for="btn22">Заголовок 2</label>
-                           <input type="radio" name="button1" class="steps__item-radio" value="14" id="btn22">
+                           <input type="radio" name="button3" class="steps__item-radio" value="14" id="btn22">
                        </div>
                        <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo3.png'.')">
                             <label for="btn23">Заголовок 3</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="15" id="btn23">
+                            <input type="radio" name="button3" class="steps__item-radio" value="15" id="btn23">
                         </div>
                         <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo3.png'.')">
                             <label for="btn24">Заголовок 4</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="16" id="btn24">
+                            <input type="radio" name="button3" class="steps__item-radio" value="16" id="btn24">
                         </div>
                         <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo3.png'.')">
                             <label for="btn25">Заголовок 5</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="17" id="btn25">
+                            <input type="radio" name="button3" class="steps__item-radio" value="17" id="btn25">
                         </div>
                         <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo3.png'.')">
                             <label for="btn26">Заголовок 6</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="18" id="btn26">
+                            <input type="radio" name="button3" class="steps__item-radio" value="18" id="btn26">
                         </div>
                         <!--/steps__item-elem-->
 
@@ -117,37 +117,37 @@ elseif($button==13 || $button==14 || $button==15 || $button==16 || $button==17 |
                        <!--steps__item-elem-->
                        <div class="steps__item-elem" style="background-image: url('.'pic/photo1.png'.')">
                            <label for="btn31">Заголовок 1</label>
-                           <input type="radio" name="button1" class="steps__item-radio" value="19" id="btn31">
+                           <input type="radio" name="button4" class="steps__item-radio" value="19" id="btn31">
                        </div>
                        <!--/steps__item-elem-->
                        <!--steps__item-elem-->
                        <div class="steps__item-elem" style="background-image: url('.'pic/photo1.png'.')">
                            <label for="btn32">Заголовок 2</label>
-                           <input type="radio" name="button1" class="steps__item-radio" value="20" id="btn32">
+                           <input type="radio" name="button4" class="steps__item-radio" value="20" id="btn32">
                        </div>
                        <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo1.png'.')">
                             <label for="btn33">Заголовок 3</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="21" id="btn33">
+                            <input type="radio" name="button4" class="steps__item-radio" value="21" id="btn33">
                         </div>
                         <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo1.png'.')">
                             <label for="btn34">Заголовок 4</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="22" id="btn34">
+                            <input type="radio" name="button4" class="steps__item-radio" value="22" id="btn34">
                         </div>
                         <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo1.png'.')">
                             <label for="btn35">Заголовок 5</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="23" id="btn35">
+                            <input type="radio" name="button4" class="steps__item-radio" value="23" id="btn35">
                         </div>
                         <!--/steps__item-elem-->
                         <!--steps__item-elem-->
                         <div class="steps__item-elem" style="background-image: url('.'pic/photo1.png'.')">
                             <label for="btn36">Заголовок 6</label>
-                            <input type="radio" name="button1" class="steps__item-radio" value="24" id="btn36">
+                            <input type="radio" name="button4" class="steps__item-radio" value="24" id="btn36">
                         </div>
                         <!--/steps__item-elem-->
 
