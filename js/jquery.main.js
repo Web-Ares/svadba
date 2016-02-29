@@ -96,7 +96,10 @@ var Slider = function (obj) {
         //private methods
         var _initSlider = function () {
 
-                _slider = new Swiper( _sliderWrapper );
+                _slider = new Swiper( _sliderWrapper, {
+                    autoplay: 5000,
+                    speed: 500
+                } );
 
             },
             _init = function () {
