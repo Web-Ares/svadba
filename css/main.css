@@ -341,7 +341,7 @@
     top: 0;
     width: 100%;
     height: 61px;
-    background: url("../img/bg-video.png") no-repeat 0 0;
+    background: url("../img/bg-video.png") no-repeat 50% 0;
     content: '';
 }
 .video-block__wrap{
