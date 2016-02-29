@@ -92,7 +92,7 @@
                 loop: true,
                 autoplay: 4000,
                 effect: 'fade',
-                speed: 300,
+                speed: 500,
             });
         }
 
