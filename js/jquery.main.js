@@ -8,6 +8,7 @@
                 return false
             }
         });
+
         $('.call-manager__close').on({
             'click': function () {
                 $('.call-manager__feedback').removeClass('open');
@@ -42,6 +43,7 @@
             SliderPortfolio($(this));
 
         });
+
         $('.your-choice__slider').each(function () {
 
             SliderChoice($(this));
@@ -80,11 +82,13 @@
 
         _init();
     };
+
     var NiceRadio = function (obj) {
         this.obj = obj;
 
         this.init();
     };
+
     NiceRadio.prototype = {
         init: function () {
             var self = this;
@@ -98,17 +102,17 @@
             return {
                 build: function () {
                     self.core.startView();
-
                 },
                 startView: function () {
-                    self.name = self.obj.attr('name');
-                    self.wrap = $('<div class="nice-radio"></div>');
-                    if (self.obj[0].checked == true) {
-                        self.wrap.addClass('nice-radio_checked');
+                    if (self.obj.parent('.nice-radio').length==0) {
+                        self.name = self.obj.attr('name');
+                        self.wrap = $('<div class="nice-radio"></div>');
+                        if (self.obj[0].checked == true) {
+                            self.wrap.addClass('nice-radio_checked');
+                        }
+                        self.obj.wrap(self.wrap);
+                        self.core.controls();
                     }
-
-                    self.obj.wrap(self.wrap);
-                    self.core.controls();
                 },
                 changeView: function () {
                     var curItem;
@@ -148,53 +152,51 @@
         //private methods
 
         var _obj = obj,
-        _addEvents = function () {
-            _obj.on('click', '.steps__item-elem', function () {
+            _addEvents = function () {
+                _obj.on('click', '.steps__item-elem', function () {
 
-                var _cur_data_que = $(this).parent().attr('data-que'),
-                    _curValue = $(this).find('.steps__item-radio').val(),
+                    var _cur_data_que = $(this).parent().attr('data-que'),
+                        _curValue = $(this).find('.steps__item-radio').val(),
 
-                    _curBlock = $('.steps__item');
+                        _curBlock = $('.steps__item');
 
-                _curBlock.each(function () {
+                    _curBlock.each(function () {
 
-                    var _each_data_que = $(this).attr('data-que');
+                        var _each_data_que = $(this).attr('data-que');
 
-                    if (_each_data_que > _cur_data_que) {
-                        $(this).remove();
-                    }
-
-                });
-
-
-                $.ajax({
-                    url: "php/ajax.php?button=" + _curValue,
-                    data: "button" + _curValue,
-                    dataType: 'html',
-                    type: "GET",
-                    success: function (data) {
-                        _obj.append($(data).find('.steps__item-title'));
-                        $(data).find('input[type="radio"]').each(function(){
-                            new NiceRadio($(this));
-                            _obj.append($(this).parents('.steps__item-elem'));
-                        });
-                        return false;
-                    },
-                    error: function (XMLHttpRequest) {
-                        if (XMLHttpRequest.statusText != "abort") {
-                            console.log("ERROR!!!");
+                        if (_each_data_que > _cur_data_que) {
+                            $(this).remove();
                         }
-                    }
-                });
+
+                    });
 
 
-            })
-        }
+                    $.ajax({
+                        url: "php/ajax.php?button=" + _curValue,
+                        data: "button" + _curValue,
+                        dataType: 'html',
+                        type: "GET",
+                        success: function (data) {
+                            _obj.append(data);
+                            $('input[type="radio"]').each(function () {
+                                new NiceRadio($(this));
+                            });
+                            return false;
+                        },
+                        error: function (XMLHttpRequest) {
+                            if (XMLHttpRequest.statusText != "abort") {
+                                console.log("ERROR!!!");
+                            }
+                        }
+                    });
+
+
+                })
+            }
 
         _init = function () {
             _addEvents();
         };
-
 
 
         //public properties
@@ -392,7 +394,6 @@
         _init();
     };
 
-
     var SliderTeam = function (obj) {
 
         //private properties
@@ -405,10 +406,10 @@
         //private methods
         var _initSlider = function () {
 
-                _slider = new Swiper( _sliderWrapper, {
+                _slider = new Swiper(_sliderWrapper, {
                     autoplay: 5000,
                     speed: 500
-                } );
+                });
 
             },
             _init = function () {
