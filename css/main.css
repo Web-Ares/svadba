@@ -1109,9 +1109,12 @@
 }
 .your-choice__budget-item span{
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -75px;
     width: 150px;
-    margin: 0 auto;
-    transform: translateY(50%);
+    transform: translateY(-50%);
 }
 .your-choice__update{
     font: 20px 'Lobster', cursive;
