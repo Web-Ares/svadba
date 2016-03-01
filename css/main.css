@@ -159,6 +159,7 @@
     -webkit-transform: translateY(-50%) scaleX(-1);
 }
 .site__subtitle{
+    display: block;
     margin: 0 0 53px;
     font-size: 30px;
     line-height: 33px;
@@ -587,7 +588,7 @@
     background-size: cover;
     content: '';
 }
-.our-team__title{
+.our-team__slogan{
     display: block;
     margin: 0 0 35px;
     color: #cd6a99;
@@ -597,15 +598,15 @@
     font-family: 'Lobster', sans-serif;
     font-weight: normal;
 }
-.our-team__title span{
+.our-team__slogan span{
     display: inline-block;
     vertical-align: top;
     position: relative;
     padding: 0 10px;
     white-space: pre-line;
 }
-.our-team__title span:before,
-.our-team__title span:after{
+.our-team__slogan span:before,
+.our-team__slogan span:after{
     position: absolute;
     top: 4px;
     left: 0;
@@ -614,7 +615,7 @@
     background: url("../img/quotes.png") no-repeat center;
     content: '';
 }
-.our-team__title span:after{
+.our-team__slogan span:after{
     top: auto;
     right: 0;
     left: auto;
@@ -643,7 +644,7 @@
     height: 397px;
     text-align: left;
 }
-.our-team__slider .swiper-slide {
+.our-team__card{
     width: 456px;
     height: 397px;
 }
@@ -891,6 +892,7 @@
     margin: 0 0 27px;
 }
 .portfolio__title{
+    position: relative;
     font-size: 20px;
     line-height: 22px;
     text-align: center;
@@ -901,6 +903,21 @@
 .portfolio__title span{
     display: block;
     margin: 4px 0 0;
+}
+.portfolio__title_video:before,
+.portfolio__title_photo:before{
+    display: block;
+    width: 100%;
+    height: 32px;
+    background: url("../img/video.png") no-repeat center;
+    background-size: 32px 32px;
+    text-align: center;
+    content: '';
+}
+.portfolio__title_photo:before{
+    height: 25px;
+    background: url("../img/photo.png") no-repeat center;
+    background-size: 32px 25px;
 }
 .portfolio__slider{
     position: relative;
@@ -984,12 +1001,10 @@
 .partners__item{
     display: inline-block;
     vertical-align: top;
+    position: relative;
     width: 140px;
     height: 70px;
     margin: 0 8px 15px;
-    background-size: auto;
-    background-position: center;
-    background-repeat: no-repeat;
     border: 1px solid #efdae0;
     -webkit-transition: border 0.3s, box-shadow 0.3s;
     transition: border 0.3s, box-shadow 0.3s;
@@ -997,6 +1012,13 @@
 .partners__item:hover{
     border-color: #cdb9be;
     box-shadow: 0 0 15px -5px rgba(0,0,0,0.4);
+}
+.partners__item img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 /* --------------- /partners --------------- */
 
