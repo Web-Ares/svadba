@@ -1299,7 +1299,27 @@
 /* --------------- /your-choice --------------- */
 /* --------------- questions --------------- */
 .questions__item {
+    position: relative;
     text-align: justify;
+}
+.questions__item-wait{
+    opacity: .8;
+}
+.questions__item-wait:before{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    z-index: 8;
+    background-image: url("../img/pre-load.png");
+    -webkit-animation: spin 1s infinite linear;
+    -ms-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+    background-repeat: no-repeat;
+    content:'';
 }
 .questions__item:after{
     display: inline-block;
@@ -1418,5 +1438,20 @@ input[type=radio]:checked + div:before{
 }
 .questions__result-sub-title_1{
     color: #000;
+}
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-ms-keyframes spin {
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg) translateZ(0);
+    }
 }
 /* --------------- /questions --------------- */
