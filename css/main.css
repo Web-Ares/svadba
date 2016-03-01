@@ -1189,7 +1189,7 @@
     transition: font-size .3s ease;
     -webkit-transition: font-size .3s ease;
 }
-.your-choice ul li {
+.your-choice_list li {
     position: relative;
     height: 40px;
     margin: 0 0 10px 66px;
@@ -1197,16 +1197,12 @@
     text-transform: uppercase;
     text-align: left;
 }
-.your-choice ul li:before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -63px;
-    width: 44px;
-    height: 44px;
-    background: url("../img/your-choice-list.png") no-repeat 0 0;
+.your-choice_list li:before{
+    background-color: #ead3d9;
+    box-shadow: 1px 1px 0 #ead3d9, -1px -1px 0 #ead3d9, -1px 1px 0 #ead3d9, 1px -1px 0 #ead3d9;
 }
-.your-choice ul li span {
+
+.your-choice_list li span {
     display: inline-block;
     height: inherit;
     padding: 10px 10px;
@@ -1268,6 +1264,9 @@
     font: 20px 'Lobster', cursive;
     color: #222;
     text-align: center;
+}
+.your-choice_list{
+    margin-left: 0;
 }
 .call-manager{
     position: relative;

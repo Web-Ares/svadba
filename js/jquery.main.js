@@ -2,14 +2,14 @@
 
     $(function () {
 
-        $('.btn_1').on({
+        $( '.btn_1' ).on({
             'click': function () {
                 $('.call-manager__feedback').addClass('open');
                 return false
             }
         });
 
-        $('.call-manager__close').on({
+        $( '.call-manager__close' ).on({
             'click': function () {
                 $('.call-manager__feedback').removeClass('open');
                 return false
@@ -32,15 +32,15 @@
             new SingleSlider ( $( this ) );
         } );
 
-        $('.questions').each(function () {
+        $( '.questions' ).each(function () {
             new Questions($(this));
         });
 
-        $('.your-choice__slider').each(function () {
+        $( '.your-choice__slider' ).each(function () {
             SliderChoice($(this));
         });
 
-        $( ' .way__content ' ).each( function() {
+        $( '.way__content' ).each( function() {
             new WayAnimate ( $( this ) );
         } )
 
@@ -232,53 +232,53 @@
     var FormValidation = function (obj) {
         var _obj = obj,
             _inputs = _obj.find($("[required]")),
-            _select = _obj.find($("select[required]"));
+            _select = _obj.find( $("select[required]") );
 
         var _addEvents = function () {
 
                 _obj.on({
-                    'submit': function () {
+                    'submit': function(){
 
-                        $.each(_inputs, function () {
+                        $.each( _inputs, function(){
 
                             var curItem = $(this),
                                 curAttr = curItem.attr("type");
 
-                            if (curAttr == "checkbox") {
+                            if ( curAttr == "checkbox" ){
                                 var curCheck = this.checked;
-                                if (!curCheck) {
+                                if ( !curCheck ){
                                     curItem.addClass("site__required-error");
                                     curItem.closest("fieldset").addClass('error');
                                 }
 
                             }
-                            else if (curItem.is("select")) {
+                            else if ( curItem.is("select") ){
 
-                                if (!curItem.parents(".site__connection-hide_true").length) {
-                                    if (curItem.val() == "0") {
+                                if ( !curItem.parents(".site__connection-hide_true").length ){
+                                    if ( curItem.val() == "0" ){
                                         curItem.closest("fieldset").addClass('error');
                                     }
                                 }
 
                             }
-                            else if (curItem.val() == '') {
+                            else if ( curItem.val() == '' ) {
 
-                                if (!curItem.parents(".site__connection-hide_true").length) {
+                                if ( !curItem.parents(".site__connection-hide_true").length ){
                                     curItem.addClass("site__required-error");
                                     curItem.closest("fieldset").addClass('error');
                                 }
                             }
-                            else if (curAttr == "email") {
+                            else if ( curAttr == "email" ){
                                 var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
-                                if (pattern.test(curItem.val()) == false) {
+                                if ( pattern.test(curItem.val()) == false ){
                                     curItem.addClass("site__required-error");
                                     curItem.closest("fieldset").addClass('error');
                                 }
                             }
 
-                        });
+                        } );
 
-                        if (!(_obj.find('.error').length)) {
+                        if(!(_obj.find('.error').length) ){
 
                             if (_obj.hasClass('call-manager__feedback')) {
 
@@ -315,16 +315,16 @@
                 });
                 _inputs.on({
 
-                    'focus': function () {
+                    'focus': function(){
 
                         var curItem = $(this),
                             closest = curItem.closest("fieldset"),
                             innerInputs = closest.find("input");
 
-                        if (closest.hasClass('error')) {
+                        if(closest.hasClass('error')){
                             curItem.removeClass("site__required-error");
-                            if (innerInputs.length > 1) {
-                                if (!closest.find(".site__required-error").length) {
+                            if ( innerInputs.length > 1 ){
+                                if ( !closest.find(".site__required-error").length ){
                                     closest.removeClass('error');
                                 }
                             } else {
@@ -337,7 +337,7 @@
                 });
 
                 _select.on({
-                    change: function () {
+                    change: function(){
                         var curItem = $(this);
                         curItem.closest("fieldset").removeClass('error');
                     }
