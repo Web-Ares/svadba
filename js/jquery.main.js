@@ -432,7 +432,7 @@
         var _initSlider = function () {
 
                 _slider = new Swiper(_sliderWrapper, {
-                    autoplay: 5000,
+                    autoplay: 4000,
                     speed: 500
                 });
 
