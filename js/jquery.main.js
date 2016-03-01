@@ -94,27 +94,34 @@
         //private properties
         var _self = this,
             _obj = obj,
+            _window = $(window),
             _start = _obj.offset().top,
-            _scrolling = $(window).scrollTop(),
-            navigation;
+            _scrolling = $(window).scrollTop();
 
         //private methods
         var _navigation = function () {
-
-                if (_scrolling > _start) {
-
-                    $('.way__decision-item').addClass('visible');
+                if ( _scrolling > _start - 100) {
+                    _obj.addClass( 'visible' );
 
                 }
             },
+            _onEvents = function () {
+                _window.on( {
+                    scroll: function(){
+                        _start = _obj.offset().top,
+                        _scrolling = $(window).scrollTop()
+
+                        _navigation();
+
+                    }
+                } )
+            },
             _init = function () {
                 _obj[ 0 ].obj = _self;
-                _initSlider();
-            };
+                _onEvents();
+                _navigation();
 
-            $(window).scroll(function () {
-                navigation();
-            })
+            };
 
         //public properties
 
