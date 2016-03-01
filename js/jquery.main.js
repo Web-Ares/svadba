@@ -30,11 +30,7 @@
 
         } );
 
-        $('input[type="radio"]').each(function () {
-            new NiceRadio($(this));
-        });
-
-        $('.steps').each(function () {
+        $('.questions').each(function () {
             new Contact($(this));
         });
 
@@ -103,69 +99,6 @@
         _init();
     };
 
-    var NiceRadio = function (obj) {
-        this.obj = obj;
-
-        this.init();
-    };
-
-    NiceRadio.prototype = {
-        init: function () {
-            var self = this;
-
-            self.core = self.core();
-            self.core.build();
-        },
-        core: function () {
-            var self = this;
-
-            return {
-                build: function () {
-                    self.core.startView();
-                },
-                startView: function () {
-                    if (self.obj.parent('.nice-radio').length == 0) {
-                        self.name = self.obj.attr('name');
-                        self.wrap = $('<div class="nice-radio"></div>');
-                        if (self.obj[0].checked == true) {
-                            self.wrap.addClass('nice-radio_checked');
-                        }
-                        self.obj.wrap(self.wrap);
-                        self.core.controls();
-                    }
-                },
-                changeView: function () {
-                    var curItem;
-                    $('input[type="radio"]').each(function () {
-                        curItem = $(this);
-
-                        if (curItem.attr('name') == self.name) {
-                            if (this.checked == true) {
-                                curItem.parent().addClass('nice-radio_checked');
-                            } else {
-                                curItem.parent().removeClass('nice-radio_checked');
-                            }
-                        }
-                    });
-                },
-                controls: function () {
-                    self.obj.on({
-                        change: function () {
-                            self.core.changeView();
-                        }
-                    });
-
-                    self.obj.parent().on({
-                        click: function () {
-                            self.obj[0].checked = true;
-                            self.obj.trigger('change');
-                        }
-                    });
-                }
-            };
-        }
-    };
-
     var Contact = function (obj) {
 
 
@@ -173,12 +106,11 @@
 
         var _obj = obj,
             _addEvents = function () {
-                _obj.on('click', '.steps__item-elem', function () {
+                _obj.on('click', '.questions__elem', function () {
 
                     var _cur_data_que = $(this).parent().attr('data-que'),
-                        _curValue = $(this).find('.steps__item-radio').val(),
-
-                        _curBlock = $('.steps__item');
+                        _curValue = $(this).find('.questions__radio').val(),
+                        _curBlock = $('.questions__item');
 
                     _curBlock.each(function () {
 
@@ -198,11 +130,6 @@
                         type: "GET",
                         success: function (data) {
                             _obj.append(data);
-                            $('input[type="radio"]').each(function () {
-                                if(!$(this).parent().hasClass('nice-radio')){
-                                    new NiceRadio($(this));
-                                }
-                            });
                             return false;
                         },
                         error: function (XMLHttpRequest) {
