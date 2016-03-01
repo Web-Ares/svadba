@@ -1297,6 +1297,9 @@
     opacity: 1;
     visibility: visible;
 }
+.call-manager__feedback.open .btn{
+    padding-top: 0;
+}
 .call-manager h2{
     font: 25px 'Lobster', cursive;
     color: #222;
