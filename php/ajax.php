@@ -7,8 +7,7 @@ $button = $_GET['button'];
 
 if($button >= 1 && $button <= 6){
 
-
-    echo ' <!--steps__item-->
+    echo '<!--steps__item-->
                     <div class="questions__item" data-que="2">
 
 
@@ -244,6 +243,7 @@ elseif($button >12 && $button<=18){
 
 }
 elseif($button >18 && $button <=24){
+
     echo ' <!--steps__result-->
                     <div class="questions__item steps__result" data-que="5">
 

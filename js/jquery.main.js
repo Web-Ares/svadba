@@ -31,7 +31,7 @@
         } );
 
         $('.questions').each(function () {
-            new Contact($(this));
+            new Questions($(this));
         });
 
         $.each( $( '.portfolio__slider' ), function() {
@@ -129,7 +129,7 @@
         _init();
     };
 
-    var Contact = function (obj) {
+    var Questions = function (obj) {
 
 
         //private methods
@@ -152,7 +152,6 @@
 
                     });
 
-
                     $.ajax({
                         url: "php/ajax.php?button=" + _curValue,
                         data: "button" + _curValue,
@@ -160,12 +159,19 @@
                         type: "GET",
                         success: function (data) {
                             _obj.append(data);
+                            _curBlock.removeClass('questions__item-wait');
                             return false;
                         },
                         error: function (XMLHttpRequest) {
                             if (XMLHttpRequest.statusText != "abort") {
+                                _curBlock.removeClass('questions__item-wait');
                                 console.log("ERROR!!!");
                             }
+                        }
+                        ,
+                        beforeSend: function(XMLHttpRequest){
+                            _curBlock.addClass('questions__item-wait');
+
                         }
                     });
 
