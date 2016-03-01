@@ -402,6 +402,7 @@
                     slidesPerView: 1,
                     nextButton: _nextBtn,
                     prevButton: _prevBtn,
+                    loop:true,
                     spaceBetween: 30
                 });
 

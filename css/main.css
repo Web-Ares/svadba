@@ -843,6 +843,7 @@
     position: relative;
     width: 700px;
     height: 153px;
+    text-decoration: underline;
 }
 .portfolio__slider .swiper-container {
     width: 100%;
