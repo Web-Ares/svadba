@@ -84,7 +84,8 @@
 
                 _slider = new Swiper(_sliderWrapper, {
                     autoplay: 4000,
-                    speed: 500
+                    speed: 500,
+                    loop: true
                 });
 
             },
@@ -278,7 +279,8 @@
                     nextButton: _nextBtn,
                     prevButton: _prevBtn,
                     spaceBetween: 30,
-                    speed: 500
+                    speed: 500,
+                    loop: true
                 });
 
             },
