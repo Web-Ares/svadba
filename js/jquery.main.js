@@ -26,7 +26,7 @@
 
         $.each( $( '.our-team__slider' ), function() {
 
-            new SliderTeam ( $( this ) );
+            new SingleSlider ( $( this ) );
 
         } );
 
@@ -65,6 +65,36 @@
         })
 
     });
+
+    var SingleSlider = function (obj) {
+
+        //private properties
+        var _self = this,
+            _obj = obj,
+            _sliderWrapper = _obj.find('.swiper-container'),
+            _slider;
+
+
+        //private methods
+        var _initSlider = function () {
+
+                _slider = new Swiper(_sliderWrapper, {
+                    autoplay: 4000,
+                    speed: 500
+                });
+
+            },
+            _init = function () {
+                _obj[ 0 ].obj = _self;
+                _initSlider();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
 
     var Slider = function (obj) {
 
@@ -331,6 +361,7 @@
                     slidesPerView: 1,
                     nextButton: _nextBtn,
                     prevButton: _prevBtn,
+                    loop:true,
                     spaceBetween: 30
                 });
 
@@ -346,34 +377,5 @@
         _init();
     };
 
-    var SliderTeam = function (obj) {
-
-        //private properties
-        var _self = this,
-            _obj = obj,
-            _sliderWrapper = _obj.find('.swiper-container'),
-            _slider;
-
-
-        //private methods
-        var _initSlider = function () {
-
-                _slider = new Swiper(_sliderWrapper, {
-                    autoplay: 5000,
-                    speed: 500
-                });
-
-            },
-            _init = function () {
-                _obj[ 0 ].obj = _self;
-                _initSlider();
-            };
-
-        //public properties
-
-        //public methods
-
-        _init();
-    };
 
 })();
