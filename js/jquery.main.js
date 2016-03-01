@@ -24,11 +24,11 @@
             Slider($(this));
         });
 
-        $('.our-team__slider').each(function () {
+        $.each( $( '.our-team__slider' ), function() {
 
-            SliderTeam($(this));
+            new SliderTeam ( $( this ) );
 
-        });
+        } );
 
         $('input[type="radio"]').each(function () {
             new NiceRadio($(this));
@@ -38,11 +38,11 @@
             new Contact($(this));
         });
 
-        $('.portfolio__slider').each(function () {
+        $.each( $( '.portfolio__slider' ), function() {
 
-            SliderPortfolio($(this));
+            new SliderPortfolio ( $( this ) );
 
-        });
+        } );
 
         $('.your-choice__slider').each(function () {
 
@@ -244,12 +244,14 @@
                     nextButton: _nextBtn,
                     prevButton: _prevBtn,
                     spaceBetween: 30,
-                    speed: 5000
+                    speed: 500
                 });
 
             },
             _init = function () {
+                _obj[ 0 ].obj = _self;
                 _initSlider();
+
             };
 
         //public properties
@@ -432,6 +434,7 @@
 
             },
             _init = function () {
+                _obj[ 0 ].obj = _self;
                 _initSlider();
             };
 
