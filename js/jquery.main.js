@@ -20,73 +20,66 @@
             new FormValidation($(this));
         });
 
-        $('.swiper-container').each(function () {
-            Slider($(this));
-        });
-
         $.each( $( '.our-team__slider' ), function() {
-
             new SingleSlider ( $( this ) );
+        } );
 
+        $.each( $( '.portfolio__slider' ), function() {
+            new SliderPortfolio ( $( this ) );
+        } );
+
+        $.each( $( '.main-slider' ), function() {
+            new SingleSlider ( $( this ) );
         } );
 
         $('.questions').each(function () {
             new Questions($(this));
         });
 
-        $.each( $( '.portfolio__slider' ), function() {
-
-            new SliderPortfolio ( $( this ) );
-
-        } );
-
         $('.your-choice__slider').each(function () {
-
             SliderChoice($(this));
-
         });
 
-        $('.way__content').each(function () {
-            _start = $(".way__content").offset().top;
-            navigation();
-
-            $(window).scroll(function () {
-                navigation();
-            })
-
-            function navigation() {
-                _scrolling = $(window).scrollTop();
-                if (_scrolling > _start) {
-
-                    $('.way__decision-item').addClass('visible');
-
-                }
-            }
-        })
+        $( ' .way__content ' ).each( function() {
+            new WayAnimate ( $( this ) );
+        } )
 
     });
 
-    var SingleSlider = function (obj) {
+    var SingleSlider = function ( obj ) {
 
         //private properties
         var _self = this,
             _obj = obj,
-            _sliderWrapper = _obj.find('.swiper-container'),
+            _sliderWrapper = _obj.find( '.swiper-container' ),
             _slider;
 
 
         //private methods
         var _initSlider = function () {
 
-                _slider = new Swiper(_sliderWrapper, {
-                    autoplay: 4000,
-                    speed: 500
-                });
+                if ( _obj.hasClass( 'main-slider' ) ) {
+
+                    _slider = new Swiper ( _sliderWrapper, {
+                        autoplay: 4000,
+                        speed: 500,
+                        effect : 'fade'
+                    } );
+
+                } else {
+
+                    _slider = new Swiper ( _sliderWrapper, {
+                        autoplay: 4000,
+                        speed: 500
+                    } );
+
+                }
 
             },
             _init = function () {
                 _obj[ 0 ].obj = _self;
                 _initSlider();
+
             };
 
         //public properties
@@ -96,31 +89,32 @@
         _init();
     };
 
-    var Slider = function (obj) {
+    var WayAnimate = function (obj) {
 
         //private properties
         var _self = this,
-            _next = obj.find($('.swiper-button-next')),
-            _prev = obj.find($('.swiper-button-prev')),
-            _paginator = obj.find($('.swiper-pagination')),
-            _obj = obj;
+            _obj = obj,
+            _start = _obj.offset().top,
+            _scrolling = $(window).scrollTop(),
+            navigation;
 
         //private methods
-        var _addEvents = function () {
+        var _navigation = function () {
 
+                if (_scrolling > _start) {
+
+                    $('.way__decision-item').addClass('visible');
+
+                }
             },
             _init = function () {
-                _addEvents();
+                _obj[ 0 ].obj = _self;
+                _initSlider();
             };
-        if (_obj.hasClass('gallery__slider')) {
-            var _swiper = new Swiper(_obj, {
-                slidesPerView: 1,
-                loop: true,
-                autoplay: 4000,
-                effect: 'fade',
-                speed: 500,
-            });
-        }
+
+            $(window).scroll(function () {
+                navigation();
+            })
 
         //public properties
 
