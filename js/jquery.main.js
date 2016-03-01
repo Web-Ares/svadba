@@ -2,21 +2,7 @@
 
     $(function () {
 
-        $( '.btn_1' ).on({
-            'click': function () {
-                $('.call-manager__feedback').addClass('open');
-                return false
-            }
-        });
-
-        $( '.call-manager__close' ).on({
-            'click': function () {
-                $('.call-manager__feedback').removeClass('open');
-                return false
-            }
-        });
-
-        $.each($('.call-manager__feedback'), function () {
+        $.each($( '.call-manager__feedback' ), function () {
             new FormValidation($(this));
         });
 
@@ -38,6 +24,20 @@
 
         $( '.your-choice__slider' ).each(function () {
             SliderChoice($(this));
+        });
+
+        $( '.btn_1' ).on({
+            'click': function () {
+                $('.call-manager__feedback').addClass('open');
+                return false
+            }
+        });
+
+        $( '.call-manager__close' ).on({
+            'click': function () {
+                $('.call-manager__feedback').removeClass('open');
+                return false
+            }
         });
 
         $( '.way__content' ).each( function() {
@@ -383,5 +383,4 @@
 
         _init();
     };
-
 })();
