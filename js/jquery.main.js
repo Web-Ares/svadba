@@ -64,12 +64,12 @@
 
             },
             _onEvents = function(){
-                _window.on({
-                    scroll: function (){
+                _window.on( {
+                    scroll: function () {
                         _inspection ();
 
                     }
-                })
+                } )
             },
             _offScrolling = function () {
                 _window.off( "scroll" )
