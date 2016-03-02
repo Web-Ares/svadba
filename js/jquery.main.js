@@ -41,10 +41,52 @@
         });
 
         $( '.way__content' ).each( function() {
-            new WayAnimate ( $( this ) );
+            new Decision ( $( this ) );
         } )
 
     });
+
+    var Decision = function (obj) {
+
+        //private properties
+        var _obj = obj,
+            _start = _obj.offset().top,
+            _window = $( window );
+
+        //private methods
+        var _inspection = function(){
+                var _scrolling = _window.scrollTop();
+                if ( _scrolling > _start - 100 ) {
+                    _obj.addClass( 'visible' );
+                    _offScrolling();
+
+                }
+
+            },
+            _onEvents = function(){
+                _window.on({
+                    scroll: function (){
+                        _inspection ();
+
+                    }
+                })
+            },
+            _offScrolling = function () {
+                _window.off( "scroll" )
+
+            },
+            _init = function () {
+                _inspection();
+                _onEvents();
+
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
 
     var SingleSlider = function ( obj ) {
 
@@ -81,47 +123,6 @@
             _init = function () {
                 _obj[ 0 ].obj = _self;
                 _initSlider();
-
-            };
-
-        //public properties
-
-        //public methods
-
-        _init();
-    };
-
-    var WayAnimate = function (obj) {
-
-        //private properties
-        var _self = this,
-            _obj = obj,
-            _window = $(window),
-            _start = _obj.offset().top,
-            _scrolling = $(window).scrollTop();
-
-        //private methods
-        var _navigation = function () {
-                if ( _scrolling > _start - 100) {
-                    _obj.addClass( 'visible' );
-
-                }
-            },
-            _onEvents = function () {
-                _window.on( {
-                    scroll: function(){
-                        _start = _obj.offset().top,
-                        _scrolling = $(window).scrollTop()
-
-                        _navigation();
-
-                    }
-                } )
-            },
-            _init = function () {
-                _obj[ 0 ].obj = _self;
-                _onEvents();
-                _navigation();
 
             };
 
