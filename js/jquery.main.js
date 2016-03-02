@@ -234,8 +234,8 @@
 
     var FormValidation = function (obj) {
         var _obj = obj,
-            _inputs = _obj.find($("[required]")),
-            _select = _obj.find( $("select[required]") );
+            _inputs = _obj.find( $ ( '[required]' ) ),
+            _select = _obj.find( $ ( 'select[required]' ) );
 
         var _addEvents = function () {
 
@@ -245,45 +245,45 @@
                         $.each( _inputs, function(){
 
                             var curItem = $(this),
-                                curAttr = curItem.attr("type");
+                                curAttr = curItem.attr( 'type' );
 
-                            if ( curAttr == "checkbox" ){
+                            if ( curAttr == 'checkbox' ){
                                 var curCheck = this.checked;
                                 if ( !curCheck ){
-                                    curItem.addClass("site__required-error");
-                                    curItem.closest("fieldset").addClass('error');
+                                    curItem.addClass( 'site__required-error' );
+                                    curItem.closest( 'fieldset' ).addClass( 'error' );
                                 }
 
                             }
                             else if ( curItem.is("select") ){
 
-                                if ( !curItem.parents(".site__connection-hide_true").length ){
+                                if ( !curItem.parents( '.site__connection-hide_true' ).length ){
                                     if ( curItem.val() == "0" ){
-                                        curItem.closest("fieldset").addClass('error');
+                                        curItem.closest( 'fieldset' ).addClass( 'error' );
                                     }
                                 }
 
                             }
                             else if ( curItem.val() == '' ) {
 
-                                if ( !curItem.parents(".site__connection-hide_true").length ){
-                                    curItem.addClass("site__required-error");
-                                    curItem.closest("fieldset").addClass('error');
+                                if ( !curItem.parents( '.site__connection-hide_true' ).length ){
+                                    curItem.addClass( 'site__required-error' );
+                                    curItem.closest( 'fieldset' ).addClass( 'error' );
                                 }
                             }
-                            else if ( curAttr == "email" ){
+                            else if ( curAttr == 'email' ){
                                 var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
                                 if ( pattern.test(curItem.val()) == false ){
-                                    curItem.addClass("site__required-error");
-                                    curItem.closest("fieldset").addClass('error');
+                                    curItem.addClass( 'site__required-error' );
+                                    curItem.closest( 'fieldset' ).addClass( 'error' );
                                 }
                             }
 
                         } );
 
-                        if(!(_obj.find('.error').length) ){
+                        if(!(_obj.find( '.error' ).length) ){
 
-                            if (_obj.hasClass('call-manager__feedback')) {
+                            if (_obj.hasClass( 'call-manager__feedback' )) {
 
                                 $.ajax({
                                     url: 'php/form.php',
@@ -297,11 +297,11 @@
                                         time: $('#time').val()
                                     },
                                     success: function () {
-                                        $('.call-manager__feedback').removeClass('open');
-                                        $('.call-manager__successfully').addClass('success');
+                                        $( '.call-manager__feedback' ).removeClass( 'open' );
+                                        $( '.call-manager__successfully' ).addClass( 'success' );
                                     },
                                     error: function (XMLHttpRequest) {
-                                        if (XMLHttpRequest.statusText != "abort") {
+                                        if (XMLHttpRequest.statusText != 'abort' ) {
                                             alert(XMLHttpRequest.statusText);
                                         }
                                     }
@@ -321,17 +321,17 @@
                     'focus': function(){
 
                         var curItem = $(this),
-                            closest = curItem.closest("fieldset"),
-                            innerInputs = closest.find("input");
+                            closest = curItem.closest( 'fieldset' ),
+                            innerInputs = closest.find( 'input' );
 
-                        if(closest.hasClass('error')){
-                            curItem.removeClass("site__required-error");
+                        if(closest.hasClass( 'error' )){
+                            curItem.removeClass( 'site__required-error' );
                             if ( innerInputs.length > 1 ){
-                                if ( !closest.find(".site__required-error").length ){
-                                    closest.removeClass('error');
+                                if ( !closest.find( '.site__required-error' ).length ){
+                                    closest.removeClass( 'error' );
                                 }
                             } else {
-                                closest.removeClass('error');
+                                closest.removeClass( 'error' );
                             }
                         }
 
@@ -342,7 +342,7 @@
                 _select.on({
                     change: function(){
                         var curItem = $(this);
-                        curItem.closest("fieldset").removeClass('error');
+                        curItem.closest( 'fieldset' ).removeClass( 'error' );
                     }
                 });
             },
@@ -358,9 +358,9 @@
         //private properties
         var _self = this,
             _obj = obj,
-            _sliderWrapper = _obj.find('.swiper-container'),
-            _nextBtn = _obj.find('.swiper-button-next'),
-            _prevBtn = _obj.find('.swiper-button-prev'),
+            _sliderWrapper = _obj.find( '.swiper-container' ),
+            _nextBtn = _obj.find( '.swiper-button-next' ),
+            _prevBtn = _obj.find( '.swiper-button-prev' ),
             _slider;
 
 
