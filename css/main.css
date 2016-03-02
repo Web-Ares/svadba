@@ -137,7 +137,9 @@
     padding: 0 84px;
 }
 .site__title_frame{
+    position: relative;
     font-size: 30px;
+    z-index: 2;
 }
 .site__title span:before,
 .site__title span:after{
@@ -567,14 +569,32 @@
     background-position: top center;
     background-repeat: no-repeat;
 }
-.benefit__item img{
+.benefit__item:before{
+    display: block;
+    width: 226px;
+    height: 220px;
+    background-position: center;
+    background-size: cover;
     margin-bottom: -21px;
+    content: '';
 }
 .benefit__item span{
     display: block;
     width: 140px;
     margin: 0 auto;
     text-align: center;
+}
+.benefit__item_service:before{
+    background-image: url("../img/icons-001.png");
+}
+.benefit__item_approach:before{
+    background-image: url("../img/icons-002.png");
+}
+.benefit__item_celebration:before{
+    background-image: url("../img/icons-003.png");
+}
+.benefit__item_price:before{
+    background-image: url("../img/icons-004.png");
 }
 /* --------------- /benefit --------------- */
 
@@ -594,7 +614,7 @@
     margin: 0 14px;
     color: #fff;
 }
-.footer__menu-item:hover{
+.footer__menu-item span:hover{
     text-decoration: underline;
 }
 .footer__menu-item:before{
@@ -604,6 +624,7 @@
     bottom: 2px;
     border-left: 1px solid #fff;
     content: '';
+    cursor: default;
 }
 .footer__menu-item:first-child:before{
     display: none;
