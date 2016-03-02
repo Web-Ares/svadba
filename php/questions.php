@@ -1,7 +1,8 @@
 <?php
 
 
-$button = $_GET['button'];
+
+$button = $_GET['button1'];
 
 
 
