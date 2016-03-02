@@ -1170,9 +1170,10 @@
     z-index: 3;
     top: 0;
     left: 19px;
+    bottom: 20px;
     width: 26px;
-    height: 99%;
-    background: url("../img/your-choice-bg01.png") repeat-y;
+    background: linear-gradient(transparent 50%, #fff 50%) repeat-y;
+    background-size: 26px 45px;
     content: "";
 }
 .your-choice__tape:after{
@@ -1182,7 +1183,6 @@
     position: relative;
     padding-bottom: 10px;
     margin: 79px 0 30px;
-    /*background: url("../img/your-choice-bg.png") repeat-y;*/
     overflow: visible;
 }
 .your-choice__list{
@@ -1395,6 +1395,14 @@
 .call-manager__feedback input:focus {
     border-color: #9a7f86;
 }
+/*.your-choice__slider:before{
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    border: 1px dotted #fff;
+}*/
 /* --------------- /your-choice --------------- */
 /* --------------- questions --------------- */
 .questions__item {
