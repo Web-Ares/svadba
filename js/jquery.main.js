@@ -71,7 +71,7 @@
                 } )
             },
             _offScrolling = function () {
-                _window.off( "scroll" )
+                _window.off( 'scroll' )
             },
             _init = function () {
                 _scrollCheck();
