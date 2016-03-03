@@ -46,7 +46,7 @@
 
     });
 
-    var Decision = function (obj) {
+    var Decision = function ( obj ) {
 
         //private properties
         var _obj = obj,
@@ -54,31 +54,28 @@
             _window = $( window );
 
         //private methods
-        var _inspection = function(){
+        var _scrollCheck = function(){
                 var _scrolling = _window.scrollTop();
+
                 if ( _scrolling > _start - 100 ) {
                     _obj.addClass( 'visible' );
                     _offScrolling();
-
                 }
 
             },
             _onEvents = function(){
                 _window.on( {
                     scroll: function () {
-                        _inspection ();
-
+                        _scrollCheck ();
                     }
                 } )
             },
             _offScrolling = function () {
                 _window.off( "scroll" )
-
             },
             _init = function () {
-                _inspection();
+                _scrollCheck();
                 _onEvents();
-
             };
 
         //public properties
