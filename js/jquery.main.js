@@ -175,7 +175,6 @@
             },
 
             _addQuestion = function( data ) {
-
                 var question = $( data ),
                     questionTopPosition;
 
@@ -187,19 +186,18 @@
 
                     questionTopPosition = question.offset().top-30;
 
-                    _body.animate( {scrollTop:questionTopPosition},500 );
+                    _body.animate( {scrollTop:questionTopPosition},600 );
 
                     question.addClass( 'questions__item-wait' );
 
                     // css animation
                     setTimeout( function() {
                         question.removeClass( 'questions__item-wait' );
-                    }, 700 );
-
-                    // css animation
-                    setTimeout( function() {
-                        question.removeClass( 'hidden' );
                     }, 400 );
+
+
+                        question.removeClass( 'hidden' );
+
 
             },
 
