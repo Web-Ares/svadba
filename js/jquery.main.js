@@ -151,7 +151,6 @@
                 });
 
             },
-
             _loadQuestion = function( currentForm ) {
 
                 _request.abort();
@@ -178,13 +177,11 @@
                 } );
 
             },
-
             _removeQuestion = function( currentForm ) {
 
                 currentForm.nextAll().remove();
 
             },
-
             _addQuestion = function( data ) {
 
                 var question = $( data ),
@@ -212,11 +209,8 @@
                 }, 400 );
 
             },
-
             _init = function() {
-
             _addEvents();
-
         };
 
         //public properties
