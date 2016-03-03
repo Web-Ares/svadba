@@ -1400,9 +1400,17 @@
 .questions__item {
     position: relative;
     text-align: justify;
+    opacity: 1;
+    transition: opacity 2s ease;
+    -webkit-transition: opacity 2s ease;
+}
+.hidden{
+    opacity: 0;
+    transition: opacity 2s ease;
+    -webkit-transition: opacity 2s ease;
 }
 .questions__item-wait{
-    opacity: .8;
+    opacity: .6;
 }
 .questions__item-wait:before{
     position: absolute;
@@ -1535,6 +1543,7 @@ input[type=radio]:checked + div:before{
     color: #cd6a99;
     margin-bottom: 33px;
 }
+
 .questions__result-sub-title_1{
     color: #000;
 }

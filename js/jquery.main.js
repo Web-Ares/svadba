@@ -132,39 +132,34 @@
         _init();
     };
 
-    var Questions = function(obj) {
+    var Questions = function( obj ) {
 
         //private properties
         var _obj = obj,
+            _body = $( 'body,html'),
             _request = new XMLHttpRequest();
-
 
         //private methods
         var _addEvents = function() {
             _obj.on( 'change', '.questions__radio', function() {
 
-                    var _currentForm = $( this ).parents( '.questions__item' );
-                        console.log(_currentForm);
+                    var currentForm = $( this ).parents( '.questions__item' );
 
-
-                    _request.abort();
-                    _request = $.ajax({
-                        url: "php/questions.php",
-                        data: _currentForm.serialize(),
+                        _removeQuestion( currentForm );
+                        _request.abort();
+                        _request = $.ajax({
+                        url: 'php/questions.php',
+                        data: currentForm.serialize(),
                         dataType: 'html',
-                        type: "GET",
-                        success:function (data) {
-                            //_curBlock.addClass('questions__item-wait');
-                            var  data;
-                            _obj.append(data);
+                        type: 'GET',
+                        success:function( data ) {
 
-                            //_curBlock.removeClass('questions__item-wait');
+                            _addQuestion( data );
 
                         },
-                        error: function (XMLHttpRequest) {
-                            if (XMLHttpRequest.statusText != "abort") {
-                                //_curBlock.removeClass('questions__item-wait');
-                                console.log("ERROR!!!");
+                        error: function( XMLHttpRequest ) {
+                            if ( XMLHttpRequest.statusText != 'abort' ) {
+                                console.log( 'ERROR!!!' );
                             }
                         }
                     });
@@ -172,18 +167,43 @@
                 })
             },
 
-            _removeQuestion = function() {
-
+            _removeQuestion = function( currentForm ) {
+                currentForm.nextAll().remove();
             },
+
             _addQuestion = function( data ) {
-                var question = $(data);
-                    question.addClass('hidden');
-                    $('.questions').append(question);
-                    question.removeClass('hidden');
+
+                var question = $( data ),
+                    questionTopPosition;
+
+                    question.addClass( 'hidden' );
+
+                    _obj.append( question );
+
+                    question = _obj.find( '.questions__item.hidden' );
+
+                    questionTopPosition = question.offset().top-30;
+
+                    _body.animate( {scrollTop:questionTopPosition},500 );
+
+                    question.addClass( 'questions__item-wait' );
+
+                    // css animation
+                    setTimeout( function() {
+                        question.removeClass( 'questions__item-wait' );
+                    }, 700 );
+
+                    // css animation
+                    setTimeout( function() {
+                        question.removeClass( 'hidden' );
+                    }, 400 );
 
             },
-        _init = function () {
+
+            _init = function() {
+
             _addEvents();
+
         };
 
 
@@ -191,7 +211,6 @@
         //public properties
 
         //public methods
-
 
         _init();
     };
