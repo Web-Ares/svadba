@@ -134,7 +134,7 @@
 
         //private properties
         var _obj = obj,
-            _body = $( 'body,html'),
+            _body = $( 'body, html' ),
             _request = new XMLHttpRequest();
 
         //private methods
@@ -156,7 +156,6 @@
                 _request.abort();
 
                 _request = $.ajax( {
-
                     url: 'php/questions.php',
                     data: currentForm.serialize(),
                     dataType: 'html',
@@ -173,7 +172,6 @@
                         }
 
                     }
-
                 } );
 
             },
@@ -193,9 +191,9 @@
 
                 question = _obj.find( '.questions__item.hidden' );
 
-                questionTopPosition = question.offset().top-30;
+                questionTopPosition = question.offset().top - 30;
 
-                _body.animate( { scrollTop:questionTopPosition },600 );
+                _body.animate( { scrollTop: questionTopPosition }, 600 );
 
                 question.addClass( 'questions__item-wait' );
 
