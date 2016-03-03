@@ -133,65 +133,86 @@
         _init();
     };
 
+  
+
     var Questions = function (obj) {
 
+        //private properties
+        var _obj = obj,
+            _body = $( 'body,html'),
+            _request = new XMLHttpRequest();
 
         //private methods
+        var _addEvents = function() {
+            _obj.on( 'change', '.questions__radio', function() {
 
-        var _obj = obj,
-            _addEvents = function () {
-                _obj.on('click', '.questions__elem', function () {
+                    var currentForm = $( this ).parents( '.questions__item' );
 
-                    var _cur_data_que = $(this).parent().attr('data-que'),
-                        _curValue = $(this).find('.questions__radio').val(),
-                        _curBlock = $('.questions__item');
-
-                    _curBlock.each(function () {
-
-                        var _each_data_que = $(this).attr('data-que');
-
-                        if (_each_data_que > _cur_data_que) {
-                            $(this).remove();
-                        }
-
-                    });
-
-                    $.ajax({
-                        url: "php/ajax.php?button=" + _curValue,
-                        data: "button" + _curValue,
+                        _removeQuestion( currentForm );
+                        _request.abort();
+                        _request = $.ajax({
+                        url: 'php/questions.php',
+                        data: currentForm.serialize(),
                         dataType: 'html',
-                        type: "GET",
-                        success: function (data) {
-                            _obj.append(data);
-                            _curBlock.removeClass('questions__item-wait');
-                            return false;
+                        type: 'GET',
+                        success:function( data ) {
+
+                            _addQuestion( data );
+
                         },
-                        error: function (XMLHttpRequest) {
-                            if (XMLHttpRequest.statusText != "abort") {
-                                _curBlock.removeClass('questions__item-wait');
-                                console.log("ERROR!!!");
+                        error: function( XMLHttpRequest ) {
+                            if ( XMLHttpRequest.statusText != 'abort' ) {
+                                console.log( 'ERROR!!!' );
                             }
                         }
-                        ,
-                        beforeSend: function(XMLHttpRequest){
-                            _curBlock.addClass('questions__item-wait');
-
-                        }
                     });
 
-
                 })
-            }
+            },
 
-        _init = function () {
+            _removeQuestion = function( currentForm ) {
+                currentForm.nextAll().remove();
+            },
+
+            _addQuestion = function( data ) {
+
+                var question = $( data ),
+                    questionTopPosition;
+
+                    question.addClass( 'hidden' );
+
+                    _obj.append( question );
+
+                    question = _obj.find( '.questions__item.hidden' );
+
+                    questionTopPosition = question.offset().top-30;
+
+                    _body.animate( {scrollTop:questionTopPosition},500 );
+
+                    question.addClass( 'questions__item-wait' );
+
+                    // css animation
+                    setTimeout( function() {
+                        question.removeClass( 'questions__item-wait' );
+                    }, 700 );
+
+                    // css animation
+                    setTimeout( function() {
+                        question.removeClass( 'hidden' );
+                    }, 400 );
+
+            },
+
+            _init = function() {
+
             _addEvents();
+
         };
 
 
         //public properties
 
         //public methods
-
 
         _init();
     };

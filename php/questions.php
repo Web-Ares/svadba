@@ -1,14 +1,18 @@
 <?php
 
 
-$button = $_GET['button'];
 
+$button1 = $_GET['button1'];
+$button2 = $_GET['button2'];
+$button3 = $_GET['button3'];
+$button4 = $_GET['button4'];
 
+//echo $button1, $button2, $button3, $button4;
 
-if($button >= 1 && $button <= 6){
+if($button1 >= 1 && $button1 <= 6){
 
     echo '<!--steps__item-->
-                    <div class="questions__item" data-que="2">
+                    <form class="questions__item">
 
 
 
@@ -80,12 +84,12 @@ if($button >= 1 && $button <= 6){
 
                         </div>
                         <!--/questions__item-elem-->
-                        ';
+                        </form>';
 }
-elseif($button > 6 && $button <= 12){
+elseif($button2 > 6 && $button2 <= 12){
 
     echo '<!--steps__item-->
-                    <div class="questions__item" data-que="3">
+                    <form class="questions__item" >
 
 
 
@@ -158,14 +162,14 @@ elseif($button > 6 && $button <= 12){
                         </div>
                         <!--/questions__item-elem-->
 
-                    </div>
+                    </form>
                     <!--/steps__item-->';
 
 }
-elseif($button >12 && $button<=18){
+elseif($button3 >12 && $button3 <=18){
 
     echo '<!--steps__item-->
-                    <div class="questions__item" data-que="4">
+                    <form class="questions__item">
 
 
 
@@ -238,14 +242,14 @@ elseif($button >12 && $button<=18){
                         </div>
                         <!--/questions__item-elem-->
 
-                    </div>
+                    </form>
                     <!--/steps__item-->';
 
 }
-elseif($button >18 && $button <=24){
+elseif($button4 >18 && $button5 <=24){
 
     echo ' <!--steps__result-->
-                    <div class="questions__item steps__result" data-que="5">
+                    <form class="questions__item steps__result">
 
 
                         <h2 class="questions__result-title">Похоже на свадьбу вашей мечты ?</h2>
@@ -281,7 +285,7 @@ elseif($button >18 && $button <=24){
 
                        <button type="submit" class="btn">Звонок менеджеру
                        </button>
-                    </div>
+                    </form>
                     <!--/steps__result-->';
 }
 
