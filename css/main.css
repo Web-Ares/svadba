@@ -64,6 +64,9 @@
     font-family: 'PT Sans', sans-serif;
     background: url("../img/bg-site.jpg")
 }
+.site_white{
+    background: #fff;
+}
 .site:after {
     display: block;
     width: 100%;
@@ -1808,5 +1811,18 @@ input[type=radio]:checked + div:before{
         margin-bottom: -18px;
     }
     /* --------------- /benefit --------------- */
+
+    /* --------------- our-team --------------- */
+    .our-team{
+        padding-top: 119px;
+    }
+    /* --------------- /our-team --------------- */
+
+    /* --------------- questions --------------- */
+    .questions__elem{
+        width: 360px;
+        overflow: hidden;
+    }
+    /* --------------- /questions --------------- */
 
 }
