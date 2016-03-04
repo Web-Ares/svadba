@@ -52,16 +52,16 @@
         //private methods
         var _initCallToManager = function() {
 
-                _openButton.on('click', function() {
+                _openButton.on( 'click', function() {
                     _managerOpen.addClass( 'open' );
                     return false
                 });
-                _closeButton.on('click', function() {
+                _closeButton.on( 'click', function() {
                     _managerOpen.removeClass( 'open' );
                     return false
                 });
             },
-            _init = function () {
+            _init = function() {
                 _initCallToManager();
             };
 
@@ -110,7 +110,7 @@
         _init();
     };
 
-    var SingleSlider = function ( obj ) {
+    var SingleSlider = function( obj ) {
 
         //private properties
         var _self = this,
@@ -120,7 +120,7 @@
 
 
         //private methods
-        var _initSlider = function () {
+        var _initSlider = function() {
 
                 if ( _obj.hasClass( 'main-slider' ) ) {
 
@@ -142,7 +142,7 @@
                 }
 
             },
-            _init = function () {
+            _init = function() {
                 _obj[ 0 ].obj = _self;
                 _initSlider();
 
@@ -243,7 +243,7 @@
         _init();
     };
 
-    var SliderChoice = function(obj) {
+    var SliderChoice = function( obj ) {
 
         //private properties
         var _self = this,
@@ -257,7 +257,7 @@
         //private methods
         var _initSlider = function() {
 
-                _slider = new Swiper(_sliderWrapper, {
+                _slider = new Swiper( _sliderWrapper, {
                     slidesPerView: 1,
                     nextButton: _nextBtn,
                     prevButton: _prevBtn,
@@ -277,7 +277,7 @@
         _init();
     };
 
-    var SliderPortfolio = function(obj) {
+    var SliderPortfolio = function( obj ) {
 
         //private properties
         var _self = this,
@@ -335,22 +335,20 @@
                                     curItem.addClass( 'site__required-error' );
                                     curItem.closest( 'fieldset' ).addClass( 'error' );
                                 }
-
-                            } else if( curItem.is("select") ){
+                            } else if( curItem.is( 'select' ) ) {
 
                                 if( !curItem.parents( '.site__connection-hide_true' ).length ) {
-                                    if( curItem.val() == "0" ){
+                                    if( curItem.val() == "0" ) {
                                         curItem.closest( 'fieldset' ).addClass( 'error' );
                                     }
                                 }
-
                             } else if( curItem.val() == '' ) {
 
                                 if( !curItem.parents( '.site__connection-hide_true' ).length ) {
                                     curItem.addClass( 'site__required-error' );
                                     curItem.closest( 'fieldset' ).addClass( 'error' );
                                 }
-                            } else if( curAttr == 'email' ){
+                            } else if( curAttr == 'email' ) {
                                 var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
                                 if( pattern.test(curItem.val()) == false ){
                                     curItem.addClass( 'site__required-error' );
@@ -368,7 +366,7 @@
                                     url: 'php/form.php',
                                     dataType: 'html',
                                     timeout: 20000,
-                                    type: "GET",
+                                    type: 'GET',
                                     data: {
                                         send: 'true',
                                         name: $( '#name' ).val(),
@@ -425,7 +423,7 @@
                     }
                 });
             },
-            _init = function () {
+            _init = function() {
                 _addEvents();
             };
 
