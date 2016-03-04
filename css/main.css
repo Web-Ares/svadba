@@ -1537,7 +1537,7 @@ input[type=radio]:checked + div:before{
 }
 .questions__result-wrap{
     position: relative;
-    text-align: justify;
+    text-align: center;
     margin-bottom: 17px;
 }
 .questions__result-wrap:after{
@@ -1549,6 +1549,7 @@ input[type=radio]:checked + div:before{
     display: inline-block;
     width: 221px;
     height: 146px;
+    margin: 8px 8px;
     background-size: cover;
 }
 .questions__result-title{
