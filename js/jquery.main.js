@@ -63,6 +63,40 @@
         _init();
     };
 
+    var SliderChoice = function (obj) {
+
+        //private properties
+        var _self = this,
+            _obj = obj,
+            _sliderWrapper = _obj.find( '.swiper-container' ),
+            _nextBtn = _obj.find( '.swiper-button-next' ),
+            _prevBtn = _obj.find( '.swiper-button-prev' ),
+            _slider;
+
+
+        //private methods
+        var _initSlider = function () {
+
+                _slider = new Swiper(_sliderWrapper, {
+                    slidesPerView: 1,
+                    nextButton: _nextBtn,
+                    prevButton: _prevBtn,
+                    loop:true,
+                    spaceBetween: 30
+                });
+
+            },
+            _init = function () {
+                _initSlider();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
     var SingleSlider = function ( obj ) {
 
         //private properties
@@ -366,40 +400,6 @@
             _init = function () {
                 _addEvents();
             };
-
-        _init();
-    };
-
-    var SliderChoice = function (obj) {
-
-        //private properties
-        var _self = this,
-            _obj = obj,
-            _sliderWrapper = _obj.find( '.swiper-container' ),
-            _nextBtn = _obj.find( '.swiper-button-next' ),
-            _prevBtn = _obj.find( '.swiper-button-prev' ),
-            _slider;
-
-
-        //private methods
-        var _initSlider = function () {
-
-                _slider = new Swiper(_sliderWrapper, {
-                    slidesPerView: 1,
-                    nextButton: _nextBtn,
-                    prevButton: _prevBtn,
-                    loop:true,
-                    spaceBetween: 30
-                });
-
-            },
-            _init = function () {
-                _initSlider();
-            };
-
-        //public properties
-
-        //public methods
 
         _init();
     };
