@@ -1394,8 +1394,9 @@
     right: -25px;
     width: 20px;
     height: 20px;
-    padding: 1px 0 0 6px;
+    padding: 1px 0 0 1px;
     border-radius: 50px;
+    text-align: center;
     color: #9a7f86;
     background: #ead3d9;
     cursor: pointer;

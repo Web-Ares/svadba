@@ -23,28 +23,50 @@
         });
 
         $( '.your-choice__slider' ).each(function () {
-            SliderChoice($(this));
-        });
-
-        $( '.btn_1' ).on({
-            'click': function () {
-                $('.call-manager__feedback').addClass('open');
-                return false
-            }
-        });
-
-        $( '.call-manager__close' ).on({
-            'click': function () {
-                $('.call-manager__feedback').removeClass('open');
-                return false
-            }
+            new SliderChoice($(this));
         });
 
         $( '.way__content' ).each( function() {
             new Decision ( $( this ) );
-        } )
+        } );
+
+        $( '.call-manager' ).each(function() {
+            new CallToManager($(this));
+        });
 
     });
+
+    var CallToManager = function (obj) {
+
+        //private properties
+        var _obj = obj,
+            _managerOpen = _obj.find( '.call-manager__feedback' ),
+            _openButton = _obj.find( '.btn_1' ),
+            _closeButton =_obj.find( '.call-manager__close' );
+
+
+        //private methods
+        var _initCallToManager = function() {
+
+                _openButton.on('click', function() {
+                    _managerOpen.addClass( 'open' );
+                    return false
+                });
+                _closeButton.on('click', function() {
+                    _managerOpen.removeClass( 'open' );
+                    return false
+                });
+            },
+            _init = function () {
+                _initCallToManager();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
 
     var Decision = function ( obj ) {
 
@@ -218,19 +240,53 @@
         _init();
     };
 
-    var SliderPortfolio = function (obj) {
+    var SliderChoice = function(obj) {
 
         //private properties
         var _self = this,
             _obj = obj,
-            _sliderWrapper = _obj.find('.swiper-container'),
-            _nextBtn = _obj.find('.swiper-button-next'),
-            _prevBtn = _obj.find('.swiper-button-prev'),
+            _sliderWrapper = _obj.find( '.swiper-container' ),
+            _nextBtn = _obj.find( '.swiper-button-next' ),
+            _prevBtn = _obj.find( '.swiper-button-prev' ),
             _slider;
 
 
         //private methods
-        var _initSlider = function () {
+        var _initSlider = function() {
+
+                _slider = new Swiper(_sliderWrapper, {
+                    slidesPerView: 1,
+                    nextButton: _nextBtn,
+                    prevButton: _prevBtn,
+                    loop:true,
+                    spaceBetween: 30
+                });
+
+            },
+            _init = function() {
+                _initSlider();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
+    var SliderPortfolio = function(obj) {
+
+        //private properties
+        var _self = this,
+            _obj = obj,
+            _sliderWrapper = _obj.find( '.swiper-container' ),
+            _nextBtn = _obj.find( '.swiper-button-next' ),
+            _prevBtn = _obj.find( '.swiper-button-prev' ),
+            _slider;
+
+
+        //private methods
+        var _initSlider = function() {
 
                 _slider = new Swiper(_sliderWrapper, {
                     slidesPerView: 3,
@@ -242,7 +298,7 @@
                 });
 
             },
-            _init = function () {
+            _init = function() {
                 _obj[ 0 ].obj = _self;
                 _initSlider();
 
@@ -255,10 +311,10 @@
         _init();
     };
 
-    var FormValidation = function (obj) {
+    var FormValidation = function(obj) {
         var _obj = obj,
-            _inputs = _obj.find( $ ( '[required]' ) ),
-            _select = _obj.find( $ ( 'select[required]' ) );
+            _inputs = _obj.find( $ ( ' [required] ' ) ),
+            _select = _obj.find( $ ( ' select[required] ' ) );
 
         var _addEvents = function () {
 
@@ -267,7 +323,7 @@
 
                         $.each( _inputs, function(){
 
-                            var curItem = $(this),
+                            var curItem = $( this ),
                                 curAttr = curItem.attr( 'type' );
 
                             if ( curAttr == 'checkbox' ){
@@ -343,7 +399,7 @@
 
                     'focus': function(){
 
-                        var curItem = $(this),
+                        var curItem = $( this ),
                             closest = curItem.closest( 'fieldset' ),
                             innerInputs = closest.find( 'input' );
 
@@ -376,37 +432,4 @@
         _init();
     };
 
-    var SliderChoice = function (obj) {
-
-        //private properties
-        var _self = this,
-            _obj = obj,
-            _sliderWrapper = _obj.find( '.swiper-container' ),
-            _nextBtn = _obj.find( '.swiper-button-next' ),
-            _prevBtn = _obj.find( '.swiper-button-prev' ),
-            _slider;
-
-
-        //private methods
-        var _initSlider = function () {
-
-                _slider = new Swiper(_sliderWrapper, {
-                    slidesPerView: 1,
-                    nextButton: _nextBtn,
-                    prevButton: _prevBtn,
-                    loop:true,
-                    spaceBetween: 30
-                });
-
-            },
-            _init = function () {
-                _initSlider();
-            };
-
-        //public properties
-
-        //public methods
-
-        _init();
-    };
 })();
