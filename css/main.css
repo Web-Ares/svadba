@@ -279,26 +279,26 @@
 }
 .way__decision-item:nth-child(1){
     left: -108px;
+    transition-delay: 2.5s;
 }
 .way__decision-item:nth-child(2){
     left: -88px;
-    transition-delay: .5s;
+    transition-delay: 2s;
 }
 .way__decision-item:nth-child(3){
     left: -68px;
-    transition-delay: 1s;
+    transition-delay: 1.5s;
 }
 .way__decision-item:nth-child(4){
     left: -33px;
-    transition-delay: 1.5s;
+    transition-delay: 1s;
 }
 .way__decision-item:nth-child(5){
     left: -13px;
-    transition-delay: 2s;
+    transition-delay: .5s;
 }
 .way__decision-item:nth-child(6){
     left: 10px;
-    transition-delay: 2.5s;
 }
 .way__content.visible .way__decision-item{
     opacity: 1;
@@ -471,13 +471,47 @@
     padding-top: 21px;
 }
 .video-memory__wrap-item{
+    opacity: 0;
     position: absolute;
+    width: 180px;
+    color: #cd6a99;
+    font-size: 14px;
+    font-style: italic;
+    text-align: left;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.video-memory__wrap.visible .video-memory__wrap-item{
+    opacity: 1;
+}
+.video-memory__wrap-item:nth-child(1){
     top: 40px;
     left: 30px;
-    width: 180px;
-    color: #222;
-    font-size: 18px;
-    text-align: left;
+}
+.video-memory__wrap-item:nth-child(2){
+    top: 135px;
+    left: 0;
+    transition-delay: .5s;
+}
+.video-memory__wrap-item:nth-child(3){
+    bottom: 40px;
+    left: 30px;
+    transition-delay: 1s;
+}
+.video-memory__wrap-item:nth-child(4){
+    top: 40px;
+    right: 30px;
+    transition-delay: 1.5s;
+}
+.video-memory__wrap-item:nth-child(5){
+    top: 135px;
+    right: 0;
+    transition-delay: 2s;
+}
+.video-memory__wrap-item:nth-child(6){
+    bottom: 40px;
+    right: 30px;
+    transition-delay: 2.5s;
 }
 .video-memory__content{
     margin-bottom: 24px;
@@ -691,11 +725,12 @@
 }
 .our-team__slider:after{
     position: absolute;
-    left: 51px;
+    left: 149px;
     top: 3px;
-    width: 383px;
-    height: 437px;
-    background: url("../img/camera.png") no-repeat;
+    width: 250px;
+    height: 307px;
+    background: url("../img/camera.png") no-repeat center;
+    background-size: contain;
     content: '';
 }
 .our-team__slider .swiper-container {

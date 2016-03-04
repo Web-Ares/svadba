@@ -30,6 +30,10 @@
             new Decision ( $( this ) );
         } );
 
+        $( '.video-memory__wrap' ).each( function() {
+            new Decision ( $( this ) );
+        } );
+
         $( '.call-manager' ).each(function() {
             new CallToManager( $ ( this ) );
         });
@@ -68,34 +72,33 @@
         _init();
     };
 
-    var Decision = function ( obj ) {
+    var Decision = function( obj ) {
 
         //private properties
         var _obj = obj,
             _start = _obj.offset().top,
+            _spaceBefore = _obj.data( 'space-to-animate'),
             _window = $( window );
 
         //private methods
-        var _scrollCheck = function(){
+        var _scrollCheck = function() {
                 var _scrolling = _window.scrollTop();
-
-                if ( _scrolling > _start - 100 ) {
+                if( _scrolling > _start - _spaceBefore ) {
                     _obj.addClass( 'visible' );
                     _offScrolling();
                 }
-
             },
             _onEvents = function(){
                 _window.on( {
-                    scroll: function () {
-                        _scrollCheck ();
+                    scroll: function() {
+                        _scrollCheck();
                     }
                 } )
             },
-            _offScrolling = function () {
+            _offScrolling = function() {
                 _window.off( 'scroll' )
             },
-            _init = function () {
+            _init = function() {
                 _scrollCheck();
                 _onEvents();
             };
