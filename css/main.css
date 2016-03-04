@@ -1823,6 +1823,14 @@ input[type=radio]:checked + div:before{
         width: 360px;
         overflow: hidden;
     }
+    .questions__elem .questions__image{
+        height: 211px;
+        margin-top: 0;
+    }
+    .questions__result-item{
+        width: 360px;
+        height: 210px;
+    }
     /* --------------- /questions --------------- */
 
 }
