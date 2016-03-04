@@ -155,7 +155,7 @@
         _init();
     };
 
-    var Questions = function ( obj ) {
+    var Questions = function( obj ) {
 
         //private properties
         var _obj = obj,
