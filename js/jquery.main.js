@@ -2,8 +2,8 @@
 
     $(function () {
 
-        $.each($( '.call-manager__feedback' ), function () {
-            new FormValidation($(this));
+        $.each($( '.call-manager__feedback' ), function() {
+            new FormValidation( $( this ) );
         });
 
         $.each( $( '.our-team__slider' ), function() {
@@ -22,8 +22,8 @@
             new Questions( $( this ) );
         });
 
-        $( '.your-choice__slider' ).each(function () {
-            new SliderChoice($(this));
+        $( '.your-choice__slider' ).each(function() {
+            new SliderChoice( $ ( this ) );
         });
 
         $( '.way__content' ).each( function() {
@@ -31,7 +31,7 @@
         } );
 
         $( '.call-manager' ).each(function() {
-            new CallToManager($(this));
+            new CallToManager( $ ( this ) );
         });
 
     });
@@ -42,7 +42,7 @@
         var _obj = obj,
             _managerOpen = _obj.find( '.call-manager__feedback' ),
             _openButton = _obj.find( '.btn_1' ),
-            _closeButton =_obj.find( '.call-manager__close' );
+            _closeButton = _obj.find( '.call-manager__close' );
 
 
         //private methods
@@ -313,46 +313,43 @@
 
     var FormValidation = function(obj) {
         var _obj = obj,
-            _inputs = _obj.find( $ ( ' [required] ' ) ),
-            _select = _obj.find( $ ( ' select[required] ' ) );
+            _inputs = _obj.find( $ ( '[ required ]' ) ),
+            _select = _obj.find( $ ( 'select[ required ]' ) );
 
-        var _addEvents = function () {
+        var _addEvents = function() {
 
                 _obj.on({
-                    'submit': function(){
+                    'submit': function() {
 
-                        $.each( _inputs, function(){
+                        $.each( _inputs, function() {
 
                             var curItem = $( this ),
                                 curAttr = curItem.attr( 'type' );
 
-                            if ( curAttr == 'checkbox' ){
+                            if( curAttr == 'checkbox' ) {
                                 var curCheck = this.checked;
-                                if ( !curCheck ){
+                                if( !curCheck ) {
                                     curItem.addClass( 'site__required-error' );
                                     curItem.closest( 'fieldset' ).addClass( 'error' );
                                 }
 
-                            }
-                            else if ( curItem.is("select") ){
+                            } else if( curItem.is("select") ){
 
-                                if ( !curItem.parents( '.site__connection-hide_true' ).length ){
-                                    if ( curItem.val() == "0" ){
+                                if( !curItem.parents( '.site__connection-hide_true' ).length ) {
+                                    if( curItem.val() == "0" ){
                                         curItem.closest( 'fieldset' ).addClass( 'error' );
                                     }
                                 }
 
-                            }
-                            else if ( curItem.val() == '' ) {
+                            } else if( curItem.val() == '' ) {
 
-                                if ( !curItem.parents( '.site__connection-hide_true' ).length ){
+                                if( !curItem.parents( '.site__connection-hide_true' ).length ) {
                                     curItem.addClass( 'site__required-error' );
                                     curItem.closest( 'fieldset' ).addClass( 'error' );
                                 }
-                            }
-                            else if ( curAttr == 'email' ){
+                            } else if( curAttr == 'email' ){
                                 var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
-                                if ( pattern.test(curItem.val()) == false ){
+                                if( pattern.test(curItem.val()) == false ){
                                     curItem.addClass( 'site__required-error' );
                                     curItem.closest( 'fieldset' ).addClass( 'error' );
                                 }
@@ -360,27 +357,27 @@
 
                         } );
 
-                        if(!(_obj.find( '.error' ).length) ){
+                        if(!( _obj.find( '.error' ).length) ) {
 
-                            if (_obj.hasClass( 'call-manager__feedback' )) {
+                            if( _obj.hasClass( 'call-manager__feedback' ) ) {
 
-                                $.ajax({
+                                $.ajax ( {
                                     url: 'php/form.php',
                                     dataType: 'html',
                                     timeout: 20000,
                                     type: "GET",
                                     data: {
                                         send: 'true',
-                                        name: $('#name').val(),
-                                        phone: $('#phone').val(),
-                                        time: $('#time').val()
+                                        name: $( '#name' ).val(),
+                                        phone: $( '#phone' ).val(),
+                                        time: $( '#time' ).val()
                                     },
                                     success: function () {
                                         $( '.call-manager__feedback' ).removeClass( 'open' );
                                         $( '.call-manager__successfully' ).addClass( 'success' );
                                     },
                                     error: function (XMLHttpRequest) {
-                                        if (XMLHttpRequest.statusText != 'abort' ) {
+                                        if(XMLHttpRequest.statusText != 'abort' ) {
                                             alert(XMLHttpRequest.statusText);
                                         }
                                     }
@@ -397,16 +394,16 @@
                 });
                 _inputs.on({
 
-                    'focus': function(){
+                    'focus': function() {
 
                         var curItem = $( this ),
                             closest = curItem.closest( 'fieldset' ),
                             innerInputs = closest.find( 'input' );
 
-                        if(closest.hasClass( 'error' )){
+                        if( closest.hasClass( 'error' ) ) {
                             curItem.removeClass( 'site__required-error' );
-                            if ( innerInputs.length > 1 ){
-                                if ( !closest.find( '.site__required-error' ).length ){
+                            if( innerInputs.length > 1 ) {
+                                if( !closest.find( '.site__required-error' ).length ) {
                                     closest.removeClass( 'error' );
                                 }
                             } else {
@@ -418,9 +415,9 @@
 
                 });
 
-                _select.on({
-                    change: function(){
-                        var curItem = $(this);
+                _select.on ( {
+                    change: function() {
+                        var curItem = $( this );
                         curItem.closest( 'fieldset' ).removeClass( 'error' );
                     }
                 });
