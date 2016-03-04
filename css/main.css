@@ -1203,6 +1203,7 @@
     background-color: #fff;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 60%;
     content: '';
 }
 .choice__wrap-item_budget:before{
@@ -1860,6 +1861,7 @@ input[type=radio]:checked + div:before{
         width: 166px;
         height: 166px;
         margin-bottom: 17px;
+        background-size: auto;
     }
     /* --------------- /choice --------------- */
 }
