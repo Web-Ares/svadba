@@ -95,7 +95,8 @@
 .site__centered{
     position: relative;
     z-index: 1;
-    width: 960px;
+    min-width: 960px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -163,7 +164,7 @@
 .site__subtitle{
     display: block;
     margin: 0 0 53px;
-    color: #222222;
+    color: #222;
     font-family: 'Lobster', sans-serif;
     font-size: 30px;
     font-weight: normal;
@@ -193,9 +194,13 @@
     position: absolute;
     top: 37px;
     left: 50%;
+    width: 321px;
     z-index: 2;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
+}
+.logo img{
+    width: 100%;
 }
 /* --------------- /logo --------------- */
 
@@ -473,11 +478,11 @@
 .video-memory__wrap-item{
     opacity: 0;
     position: absolute;
-    width: 180px;
+    width: 250px;
     color: #cd6a99;
-    font-size: 14px;
-    font-style: italic;
+    font: 18px 'bebasneue_regular', sans-serif;
     text-align: left;
+    text-transform: uppercase;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
 }
@@ -485,38 +490,39 @@
     opacity: 1;
 }
 .video-memory__wrap-item:nth-child(1){
-    top: 40px;
-    left: 30px;
+    top: 66px;
+    left: 0;
 }
 .video-memory__wrap-item:nth-child(2){
-    top: 135px;
-    left: 0;
+    top: 218px;
+    left: 12px;
     transition-delay: .5s;
 }
 .video-memory__wrap-item:nth-child(3){
-    bottom: 40px;
-    left: 30px;
+    top: 71px;
+    right: 0;
+    text-align: center;
     transition-delay: 1s;
 }
 .video-memory__wrap-item:nth-child(4){
-    top: 40px;
-    right: 30px;
-    transition-delay: 1.5s;
-}
-.video-memory__wrap-item:nth-child(5){
-    top: 135px;
+    top: 196px;
     right: 0;
-    transition-delay: 2s;
-}
-.video-memory__wrap-item:nth-child(6){
-    bottom: 40px;
-    right: 30px;
-    transition-delay: 2.5s;
+    text-align: center;
+    transition-delay: 1.5s;
 }
 .video-memory__content{
     margin-bottom: 24px;
-    font: 15px/18px 'Lobster', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
     color: #222;
+}
+.video-memory__content-tagline{
+    padding-top: 10px;
+    font: 24px 'Lobster', sans-serif;
+    color: #cd6a99;
+}
+.video-memory__content-tagline span{
+    display: block;
 }
 /* --------------- /video-memory --------------- */
 
@@ -536,8 +542,9 @@
     position: relative;
     height: 40px;
     margin-bottom: 10px;
-    font: 30px 'bebasneue_bold', sans-serif;
-    text-transform: uppercase;
+    font-size: 30px;
+    /*font: 30px 'bebasneue_bold', sans-serif;
+    text-transform: uppercase;*/
     text-align: left;
 }
 .advantages__list li span{
@@ -1687,3 +1694,126 @@ input[type=radio]:checked + div:before{
     }
 }
 /* --------------- /questions --------------- */
+
+@media (min-width: 1024px) {
+
+    /* --------------- site --------------- */
+    .site__centered{
+        max-width: 1170px;
+        padding: 0 15px;
+    }
+    .site__title_frame_1{
+        font-size: 36px;
+    }
+    /* --------------- /site --------------- */
+
+    /* --------------- logo --------------- */
+    .logo {
+        top: 25px;
+        width: 432px;
+    }
+    /* --------------- /logo --------------- */
+
+    /* --------------- phone --------------- */
+    .phone {
+        top: 12px;
+        right: 12px;
+    }
+    /* --------------- phone --------------- */
+
+    /* --------------- trip --------------- */
+    .trip{
+        top: 1px;
+        left: 22px;
+    }
+    /* --------------- /trip --------------- */
+
+    /* --------------- organization --------------- */
+    .organization {
+        padding: 46px 0 52px;
+    }
+    .organization__wrap {
+        padding-top: 39px;
+    }
+    .organization__item{
+        width: 24.5%;
+        max-width: 263px;
+        font: 25px 'bebasneue_regular', sans-serif;
+    }
+    .organization__title {
+        padding: 15px 0 21px;
+    }
+    .organization__img{
+        overflow: hidden;
+    }
+    .organization__img img{
+        width: 100%;
+    }
+    .organization__content{
+        margin: 13px 0 14px 59px;
+        padding-left: 16px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .organization__letter{
+        top: -5px;
+        left: -39px;
+    }
+    /* --------------- /organization --------------- */
+
+    /* --------------- video-memory --------------- */
+    .video-memory{
+        padding-top: 97px;
+    }
+    .video-memory__wrap{
+        padding-top: 16px;
+        margin-bottom: 17px;
+    }
+    .video-memory__content{
+        margin-bottom: 29px;
+    }
+    /* --------------- /video-memory --------------- */
+
+    /* --------------- advantages --------------- */
+    .advantages{
+        padding-top: 125px;
+        margin-bottom: 26px;
+    }
+    .advantages__list{
+        margin-left: 79px;
+    }
+    /* --------------- /advantages --------------- */
+
+    /* --------------- benefit --------------- */
+    .benefit__introduction{
+        margin-bottom: 8px;
+        font-size: 20px;
+        letter-spacing: -0.7px;
+    }
+    .benefit__wrap{
+        margin: 0 54px;
+    }
+    .benefit__item:before{
+        margin-bottom: -18px;
+    }
+    /* --------------- /benefit --------------- */
+
+}
+
+@media (min-width: 1175px) {
+
+    /* --------------- video-memory --------------- */
+    .video-memory__wrap-item{
+        width: 325px;
+        font-size: 24px;
+    }
+    .video-memory__wrap-item:nth-child(3){
+        width: 320px;
+    }
+    .video-memory__wrap-item:nth-child(4){
+        right: 35px;
+        width: 245px;
+    }
+    /* --------------- /video-memory --------------- */
+
+}
