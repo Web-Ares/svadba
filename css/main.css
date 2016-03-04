@@ -1708,6 +1708,12 @@ input[type=radio]:checked + div:before{
     .site__title_frame_1{
         font-size: 36px;
     }
+    .site__subtitle_3{
+        margin-bottom: 58px;
+    }
+    .site__title_frame_4{
+        padding-top: 10px;
+    }
     /* --------------- /site --------------- */
 
     /* --------------- logo --------------- */
@@ -1716,6 +1722,12 @@ input[type=radio]:checked + div:before{
         width: 432px;
     }
     /* --------------- /logo --------------- */
+
+    /* --------------- btn --------------- */
+    .btn{
+        width: 270px;
+    }
+    /* --------------- /btn --------------- */
 
     /* --------------- phone --------------- */
     .phone {
@@ -1833,4 +1845,21 @@ input[type=radio]:checked + div:before{
     }
     /* --------------- /questions --------------- */
 
+    /* --------------- way__content --------------- */
+    .way__content{
+        margin-bottom: -98px;
+    }
+    /* --------------- /way__content --------------- */
+
+    /* --------------- choice --------------- */
+    .choice__wrap-item{
+        width: 166px;
+        margin: 0 103px;
+    }
+    .choice__wrap-item:before{
+        width: 166px;
+        height: 166px;
+        margin-bottom: 17px;
+    }
+    /* --------------- /choice --------------- */
 }
