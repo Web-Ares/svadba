@@ -1810,6 +1810,9 @@ input[type=radio]:checked + div:before{
     /* --------------- /our-team --------------- */
 
     /* --------------- portfolio__slider --------------- */
+    .portfolio__title{
+        margin-bottom: 29px;
+    }
     .portfolio__slider>div{
         width: 850px;
     }
