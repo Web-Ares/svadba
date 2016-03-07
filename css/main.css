@@ -1822,6 +1822,13 @@ input[type=radio]:checked + div:before{
     }
     /* --------------- /portfolio__slider --------------- */
 
+    /* --------------- partners__item --------------- */
+    .partners__item{
+        width: 165px;
+        margin: 0 12px 15px;
+    }
+    /* --------------- /partners__item --------------- */
+
     /* --------------- advantages --------------- */
     .advantages{
         padding-top: 125px;
