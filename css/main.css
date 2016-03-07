@@ -1801,6 +1801,20 @@ input[type=radio]:checked + div:before{
     }
     /* --------------- /video-memory --------------- */
 
+    /* --------------- our-team --------------- */
+    .our-team__slogan{
+        margin: -10px 0 19px;
+        font-size: 30px;
+        line-height: 37px;
+    }
+    /* --------------- /our-team --------------- */
+
+    /* --------------- portfolio__slider --------------- */
+    .portfolio__slider>div{
+        width: 850px;
+    }
+    /* --------------- /portfolio__slider --------------- */
+
     /* --------------- advantages --------------- */
     .advantages{
         padding-top: 125px;
@@ -1824,12 +1838,6 @@ input[type=radio]:checked + div:before{
         margin-bottom: -18px;
     }
     /* --------------- /benefit --------------- */
-
-    /* --------------- our-team --------------- */
-    .our-team{
-        padding-top: 119px;
-    }
-    /* --------------- /our-team --------------- */
 
     /* --------------- questions --------------- */
     .questions__elem{
